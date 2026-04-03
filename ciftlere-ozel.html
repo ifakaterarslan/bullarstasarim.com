@@ -35,19 +35,36 @@
     }
     </script>
     <style>
-        * { margin: 0; padding: 0; box-sizing: border-box; }
+        * { margin: 0; padding: 0; box-sizing: border-box; -webkit-tap-highlight-color: transparent; }
         body { font-family: 'Montserrat', sans-serif; background-color: #f4f4f4; color: #333; }
-        
         /* HEADER */
-        .wood-header { width: 100%; min-height: 140px; background: url('bullars-header-tema.jpg') center/cover no-repeat; display: flex; flex-direction: column; align-items: center; justify-content: flex-start; padding: 10px 50px 20px 50px; box-shadow: 0 4px 15px rgba(0,0,0,0.3); position: sticky; top: 0; z-index: 1000; }
-        .logo-text { font-family: 'Playfair Display', serif; font-size: 36px; color: #3d2b1f; text-decoration: none; font-weight: 900; margin-top: -15px; margin-bottom: 15px; display: block; }
-
+        .wood-header {
+            width: 100%; height: 60px;
+            background: url('bullars-header-tema.jpg') center center / cover no-repeat;
+            display: flex; align-items: center; justify-content: center;
+            padding: 0 15px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.2);
+            position: sticky; top: 0; z-index: 2000;
+        }
+        .sub-nav-bar { background: #fff; border-bottom: 1px solid #ddd; padding: 10px 0; box-shadow: 0 2px 5px rgba(0,0,0,0.05); position: relative; z-index: 1900; }
+        .logo-text { display: none !important; }
         /* YAN ARAÇLAR */
-        .vertical-tools { position: absolute; left: 15px; top: 15px; display: flex; flex-direction: column; gap: 10px; z-index: 1100; }
+        .vertical-tools {
+            position: absolute; left: 15px; top: 50%;
+            transform: translateY(-50%);
+            display: flex; flex-direction: row;
+            gap: 10px; z-index: 2100;
+        }
         .tool-btn { width: 42px; height: 42px; background: rgba(255, 255, 255, 0.8); border: 1px solid rgba(61, 43, 31, 0.2); border-radius: 8px; display: flex; align-items: center; justify-content: center; cursor: pointer; color: #3d2b1f; font-size: 18px; transition: 0.3s; }
         .tool-btn:hover { background: #8B5E3C; color: #fff; }
-        .search-slide { position: absolute; left: 55px; top: 52px; background: white; border: 1px solid #8B5E3C; border-radius: 50px; height: 42px; width: 0; overflow: hidden; display: flex; align-items: center; transition: 0.4s ease; padding: 0; box-shadow: 0 4px 10px rgba(0,0,0,0.1); }
-        .search-slide.active { width: 250px; padding: 0 15px; }
+        .search-slide {
+            position: absolute; left: 100px; top: 50%;
+            transform: translateY(-50%);
+            background: white; border: 1px solid #8B5E3C; border-radius: 50px;
+            height: 42px; width: 0; overflow: hidden; display: flex; align-items: center;
+            transition: 0.4s ease; padding: 0; box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+        }
+        .search-slide.active { width: 200px; padding: 0 15px; }
         .search-slide input { border: none; outline: none; width: 100%; font-size: 13px; margin-left: 10px; }
         
         /* YAN MENÜ - TAM LİSTE */
@@ -55,10 +72,20 @@
         .side-menu.active { left: 0; }
         .side-menu a { color: #fff; text-decoration: none; display: block; padding: 15px 0; font-weight: 700; border-bottom: 1px solid #4d3829; font-size: 14px; }
         .close-menu { position: absolute; right: 20px; top: 20px; font-size: 25px; cursor: pointer; }
-
-        /* ÜST NAVİGASYON - TAM LİSTE */
-        .nav-links-sub { list-style: none; display: flex; gap: 8px; flex-wrap: wrap; justify-content: center; }
-        .nav-links-sub li a { text-decoration: none; color: #3d2b1f; font-weight: 700; font-size: 11px; text-transform: uppercase; padding: 10px 14px; background: rgba(255, 255, 255, 0.6); border-radius: 4px; transition: 0.3s; border: 1px solid rgba(61, 43, 31, 0.1); }
+        /* NAVİGASYON */
+        .nav-links-sub {
+            display: flex;
+            list-style: none;
+            gap: 15px;
+            margin: 0;
+            padding: 0;
+            flex-wrap: wrap;
+            justify-content: center;
+        }
+        .nav-links-sub li a {
+            text-decoration: none; color: #3d2b1f; font-weight: 700; font-size: 11px;
+            text-transform: uppercase; padding: 5px 8px; transition: 0.3s;
+        }
         .nav-links-sub li a:hover { background: #8B5E3C; color: #fff; }
         
         /* KATALOG */
@@ -67,7 +94,7 @@
         .product-image { flex: 1; text-align: center; position: sticky; top: 180px; }
         .product-image img { width: 100%; max-width: 450px; border-radius: 12px; }
         .product-info { flex: 1.5; }
-        .product-title { font-family: 'Playfair Display', serif; font-size: 26px; margin-bottom: 20px; color: #222; border-left: 6px solid #8B5E3C; padding-left: 20px; line-height: 1.2; }
+        .product-title { font-family: 'Playfair Display', serif; font-size: 26px; margin-bottom: 20px; color: #222; border-left: none; padding-left: 0; line-height: 1.2; }
         .description-box p { font-size: 15px; line-height: 1.8; color: #444; margin-bottom: 15px; text-align: justify; white-space: pre-line; }
         .description-box h3 { font-size: 18px; margin: 20px 0 10px 0; color: #3d2b1f; }
         .description-box ul { margin-bottom: 20px; padding-left: 20px; list-style: none; }
@@ -81,7 +108,41 @@
         .wa-fixed:hover { transform: scale(1.1); }
         .footer-text { text-align: center; padding: 40px 20px; font-size: 14px; color: #555; border-top: 1px solid #ddd; margin-top: 50px; line-height: 1.6; }
 
-        @media (max-width: 1100px) { .product-card { flex-direction: column; } .product-image { position: static; } }
+        @media (max-width: 1024px) {
+            .wood-header { height: 60px; padding: 5px; }
+            .product-card { flex-direction: column; }
+            .product-image { position: static; margin-bottom: 30px; }
+        }
+
+        @media (max-width: 768px) {
+            .wood-header {
+                padding: 0 10px;
+                height: 50px;
+                min-height: 50px;
+                position: relative !important;
+                background-image: url('bullars-header-tema2.jpg');
+                background-size: contain;
+            }
+            .sub-nav-bar { padding: 8px 5px; background: #fff; }
+            .nav-links-sub {
+                gap: 5px;
+                margin-top: 0;
+                width: 100%;
+            }
+            .nav-links-sub li a {
+                font-size: 9px;
+                padding: 4px 6px;
+                background: #f9f9f9;
+                border-radius: 3px;
+            }
+            .vertical-tools { left: 10px; top: 10px; transform: none; }
+            .tool-btn { width: 36px; height: 36px; font-size: 16px; }
+            .search-slide { left: 100px; height: 36px; top: 10px; transform: none; }
+            .search-slide.active { width: 200px; padding: 0 15px; }
+            .catalog-container { margin: 20px auto; padding: 0 15px; }
+            .product-card { padding: 20px; gap: 20px; }
+        }
+
     </style>
 </head>
 <body onclick="closeAll(event)">
@@ -100,7 +161,7 @@
         <a href="hakkimizda.html">HAKKIMIZDA</a>
     </div>
 
-    <header class="wood-header">
+    <header class="wood-header" itemscope itemtype="https://schema.org/WPHeader">
         <div class="vertical-tools" onclick="event.stopPropagation()">
             <div class="tool-btn" onclick="toggleMenu()"><i class="fas fa-bars"></i></div>
             <div class="tool-btn" onclick="toggleSearch()"><i class="fas fa-search"></i></div>
@@ -109,20 +170,22 @@
                 <input type="text" placeholder="Ürün ara...">
             </div>
         </div>
-        <a href="index.html" class="logo-text">BULLARS</a>
-        <ul class="nav-links-sub">
-            <li><a href="index.html">ANA SAYFA</a></li>
-            <li><a href="tum-urunler.html">TÜM ÜRÜNLER</a></li>
-            <li><a href="kisiye-ozel.html">KİŞİYE ÖZEL</a></li>
-            <li><a href="ev-dekorasyon.html">EV DEKORASYON</a></li>
-            <li><a href="ofis-dekorasyon.html">OFİS DEKORASYON</a></li>
-            <li><a href="isletmelere-ozel.html">İŞLETMELERE ÖZEL</a></li>
-            <li><a href="mutfak-ev.html">MUTFAK - EV</a></li>
-            <li><a href="ciftlere-ozel.html">ÇİFTLERE ÖZEL</a></li>
-            <li><a href="blog.html">BLOG</a></li>
-            <li><a href="hakkimizda.html">HAKKIMIZDA</a></li>
-        </ul>
     </header>
+
+    <nav class="sub-nav-bar" itemscope itemtype="https://schema.org/SiteNavigationElement">
+        <ul class="nav-links-sub">
+            <li><a href="index.html" itemprop="url"><span itemprop="name">ANA SAYFA</span></a></li>
+            <li><a href="tum-urunler.html" itemprop="url"><span itemprop="name">TÜM ÜRÜNLER</span></a></li>
+            <li><a href="kisiye-ozel.html" itemprop="url"><span itemprop="name">KİŞİYE ÖZEL</span></a></li>
+            <li><a href="ev-dekorasyon.html" itemprop="url"><span itemprop="name">EV DEKORASYON</span></a></li>
+            <li><a href="ofis-dekorasyon.html" itemprop="url"><span itemprop="name">OFİS DEKORASYON</span></a></li>
+            <li><a href="isletmelere-ozel.html" itemprop="url"><span itemprop="name">İŞLETMELERE ÖZEL</span></a></li>
+            <li><a href="mutfak-ev.html" itemprop="url"><span itemprop="name">MUTFAK - EV</span></a></li>
+            <li><a href="ciftlere-ozel.html" itemprop="url"><span itemprop="name">ÇİFTLERE ÖZEL</span></a></li>
+            <li><a href="blog.html" itemprop="url"><span itemprop="name">BLOG</span></a></li>
+            <li><a href="hakkimizda.html" itemprop="url"><span itemprop="name">HAKKIMIZDA</span></a></li>
+        </ul>
+    </nav>
 
     <div class="catalog-container">
         
@@ -289,13 +352,155 @@
     </div>
 
     <a href="https://wa.me/905462171834" target="_blank" class="wa-fixed"><i class="fab fa-whatsapp"></i></a>
+
+    <footer class="footer-notice" itemscope itemtype="https://schema.org/WPFooter">
+        <div class="footer-top-text">
+            Güvenli Ödeme Ve Teslimat İçin <a href="https://www.shopier.com/bullarstasarim" target="_blank" itemprop="url">''Shopier''</a> Mağazamızdan Sipariş Oluşturabilirsiniz
+        </div>
+        <div class="footer-copyright">
+            <span itemprop="copyrightYear">2026</span> © <span itemprop="copyrightHolder">BULLARS TASARIM</span> - bullarstasarim.com | Tüm hakları saklıdır, Sitedeki görseller ve yazılar izinsiz kullanılamaz.
+        </div>
+        <div class="footer-credits">
+            <span itemprop="creator">Onur Erarslan</span> Tarafından E-Ticaret Sistemi İle Hazırlanmıştır Hakları Saklıdır.
+        </div>
+    </footer>
+
+    <script>
+        function toggleMenu() { event.stopPropagation(); document.getElementById('sideMenu').classList.toggle('active'); }
+        function toggleSearch() { event.stopPropagation(); document.getElementById('searchBar').classList.toggle('active'); }
+        function closeAll(event) {
+            const sideMenu = document.getElementById('sideMenu');
+            const searchBar = document.getElementById('searchBar');
+            if (!sideMenu.contains(event.target)) { sideMenu.classList.remove('active'); }
+            if (!searchBar.contains(event.target)) { searchBar.classList.remove('active'); }
+        }
+        function toggleReadMore(btn) {
+            const content = btn.nextElementSibling;
+            if (content.style.display === "block") { content.style.display = "none"; btn.innerText = "devamını oku"; }
+            else { content.style.display = "block"; btn.innerText = "küçült"; }
+        }
+
+        function performSearch(query) {
+            const term = query.trim().toLowerCase();
+            const products = document.querySelectorAll('.product-card');
+            products.forEach((card) => {
+                const title = card.querySelector('.product-title')?.innerText.toLowerCase() || '';
+                const desc = card.querySelector('.description-box')?.innerText.toLowerCase() || '';
+                const match = term === '' || title.includes(term) || desc.includes(term);
+                card.style.display = match ? 'flex' : 'none';
+            });
+        }
+
+        function setupSearch() {
+            const input = document.getElementById('searchInput');
+            if (input) {
+                input.addEventListener('input', () => performSearch(input.value));
+            }
+        }
+
+        document.addEventListener('DOMContentLoaded', () => {
+            setupSearch();
+        });
+    </script>
+</body>
+</html>
+        <div class="product-card">
+            <div class="product-image">
+                <img src="kisiye-ozel-cift-fotografli-lazer-kazima-ahsap-cerceve.jpg" alt="Bambu Çerçeve">
+            </div>
+            <div class="product-info">
+                <h2 class="product-title">Kişiye Özel Çift Fotoğraflı Lazer İşleme Bambu Çerçeve – Ömürlük Anı Tasarımı</h2>
+                <div class="description-box">
+                    <p>Aynı çerçevede 2 farklı fotoğraf kullanabileceğin, doğallığın ve kalıcılığın en şık örneği. Bullars Tasarım atölyesinde, çevre dostu %100 doğal bambu üzerine en sevdiğiniz iki anıyı lazer teknolojisiyle işliyoruz. Minimal ve estetik yapısı, hafifliği ve çevre dostu malzemesiyle hem modern hem de doğal dekorasyonlara kusursuz uyum sağlar.
+                    Hem anlamı hem de şıklığı bir arada sunan bu ürün, duygusu yüksek ve kalıcı bir hediye arayanlar için mükemmel seçimdir.</p>
+                    <span class="read-more-btn" onclick="toggleReadMore(this)">devamını oku</span>
+                    <div class="hidden-content">
+                        <h3>100 Doğal Bambu – Şık ve Modern Görünüm</h3>
+                        <ul>
+                            <li>✔ Çevre dostu malzeme</li>
+                            <li>✔ Doğal ve sıcak görünüm</li>
+                            <li>✔ Hafif ve dayanıklı yapı</li>
+                        </ul>
+                        <h3>📸 Çift Fotoğraf Özelliği – Tek Üründe İki Anı</h3>
+                        <ul>
+                            <li>✔ Aynı çerçevede 2 farklı fotoğraf</li>
+                            <li>✔ Anlamlı kombinasyonlar (önce/sonra, çiftler, aile)</li>
+                            <li>✔ Hikaye anlatan tasarım</li>
+                        </ul>
+                        <h3>🔥 Lazer İşleme – Ömür Boyu Kalıcılık</h3>
+                        <ul>
+                            <li>✔ Solmaz</li>
+                            <li>✔ Silinmez</li>
+                            <li>✔ Yıllarca kalıcı</li>
+                        </ul>
+                        <h3>📦 Ürün Özellikleri</h3>
+                        <ul>
+                            <li>✔ Malzeme: %100 doğal bambu</li>
+                            <li>✔ Üretim: Lazer işleme</li>
+                            <li>✔ Çift fotoğraf alanı</li>
+                            <li>✔ Stand: Dahil</li>
+                        </ul>
+                    </div>
+                </div>
+                <a href="https://www.shopier.com/bullarstasarim" target="_blank" class="buy-button">FOTOĞRAFINI GÖNDER</a>
+            </div>
+        </div>
+
+    </div>
+
+    <a href="https://wa.me/905462171834" target="_blank" class="wa-fixed"><i class="fab fa-whatsapp"></i></a>
     <div class="footer-text">BULLARS TASARIM 2026 Copyright © bullarstasarim.com Tüm hakları saklıdır.</div>
+
+    <footer class="footer-notice" itemscope itemtype="https://schema.org/WPFooter">
+        <div class="footer-top-text">
+            Güvenli Ödeme Ve Teslimat İçin <a href="https://www.shopier.com/bullarstasarim" target="_blank" itemprop="url">''Shopier''</a> Mağazamızdan Sipariş Oluşturabilirsiniz
+        </div>
+        <div class="footer-copyright">
+            <span itemprop="copyrightYear">2026</span> © <span itemprop="copyrightHolder">BULLARS TASARIM</span> - bullarstasarim.com | Tüm hakları saklıdır, Sitedeki görseller ve yazılar izinsiz kullanılamaz.
+        </div>
+        <div class="footer-credits">
+            <span itemprop="creator">Onur Erarslan</span> Tarafından E-Ticaret Sistemi İle Hazırlanmıştır Hakları Saklıdır.
+        </div>
+    </footer>
 
     <script>
         function toggleMenu() { event.stopPropagation(); document.getElementById('sideMenu').classList.toggle('active'); }
         function toggleSearch() { event.stopPropagation(); document.getElementById('searchBar').classList.toggle('active'); }
         function closeAll(event) { if (!document.getElementById('sideMenu').contains(event.target)) document.getElementById('sideMenu').classList.remove('active'); if (!document.getElementById('searchBar').contains(event.target)) document.getElementById('searchBar').classList.remove('active'); }
         function toggleReadMore(btn) { const content = btn.nextElementSibling; if (content.style.display === "block") { content.style.display = "none"; btn.innerText = "devamını oku"; } else { content.style.display = "block"; btn.innerText = "küçült"; } }
+        function closeAll(event) {
+            const sideMenu = document.getElementById('sideMenu');
+            const searchBar = document.getElementById('searchBar');
+            if (!sideMenu.contains(event.target)) { sideMenu.classList.remove('active'); }
+            if (!searchBar.contains(event.target)) { searchBar.classList.remove('active'); }
+        }
+        function toggleReadMore(btn) {
+            const content = btn.nextElementSibling;
+            if (content.style.display === "block") { content.style.display = "none"; btn.innerText = "devamını oku"; }
+            else { content.style.display = "block"; btn.innerText = "küçült"; }
+        }
+
+        function performSearch(query) {
+            const term = query.trim().toLowerCase();
+            const products = document.querySelectorAll('.product-card');
+            products.forEach((card) => {
+                const title = card.querySelector('.product-title')?.innerText.toLowerCase() || '';
+                const desc = card.querySelector('.description-box')?.innerText.toLowerCase() || '';
+                const match = term === '' || title.includes(term) || desc.includes(term);
+                card.style.display = match ? 'flex' : 'none';
+            });
+        }
+
+        function setupSearch() {
+            const input = document.getElementById('searchInput');
+            if (input) {
+                input.addEventListener('input', () => performSearch(input.value));
+            }
+        }
+
+        document.addEventListener('DOMContentLoaded', () => {
+            setupSearch();
+        });
     </script>
 </body>
 </html>

@@ -128,21 +128,34 @@
         * { margin: 0; padding: 0; box-sizing: border-box; -webkit-tap-highlight-color: transparent; }
         body { font-family: 'Montserrat', sans-serif; background-color: #f4f4f4; color: #333; }
         .wood-header {
-            width: 100%; min-height: 140px;
-            background: url('bullars-header-tema.jpg') center/cover no-repeat;
-            display: flex; flex-direction: column; align-items: center; justify-content: flex-start;
-            padding: 10px 50px 20px 50px;
-            box-shadow: 0 4px 15px rgba(0,0,0,0.3);
+            width: 100%; height: 60px;
+            background: url('bullars-header-tema.jpg') center center / cover no-repeat;
+            display: flex; align-items: center; justify-content: center;
+            padding: 0 15px;
             position: sticky; top: 0; z-index: 2000;
         }
-        .logo-text {
-            font-family: 'Playfair Display', serif; font-size: 36px; color: #3d2b1f;
-            text-decoration: none; font-weight: 900; margin-top: -15px; margin-bottom: 15px; display: block;
-        }
+        .sub-nav-bar { background: #fff; border-bottom: 1px solid #ddd; padding: 10px 0; box-shadow: 0 2px 5px rgba(0,0,0,0.05); position: relative; z-index: 1900; }
         .vertical-tools {
-            position: absolute; left: 15px; top: 15px;
-            display: flex; flex-direction: column; gap: 10px; z-index: 2100;
+            position: absolute; left: 15px; top: 50%;
+            transform: translateY(-50%);
+            display: flex; flex-direction: row; /* İkonları yan yana dizerek dikey çizgiyi kaldırdık */
+            gap: 10px; z-index: 2100;
         }
+        .nav-links-sub {
+            display: flex;
+            list-style: none;
+            gap: 15px;
+            margin: 0;
+            padding: 0;
+            flex-wrap: wrap;
+            justify-content: center;
+        }
+        .nav-links-sub li a {
+            text-decoration: none; color: #3d2b1f; font-weight: 700; font-size: 11px;
+            text-transform: uppercase; padding: 5px 8px; transition: 0.3s;
+        }
+        .nav-links-sub li a:hover { background: #8B5E3C; color: #fff; }
+
         .tool-btn {
             width: 42px; height: 42px; background: rgba(255,255,255,0.8);
             border: 1px solid rgba(61,43,31,0.2); border-radius: 8px;
@@ -151,12 +164,13 @@
         }
         .tool-btn:hover { background: #8B5E3C; color: #fff; }
         .search-slide {
-            position: absolute; left: 55px; top: 52px;
+            position: absolute; left: 100px; top: 50%;
+            transform: translateY(-50%);
             background: white; border: 1px solid #8B5E3C; border-radius: 50px;
             height: 42px; width: 0; overflow: hidden; display: flex; align-items: center;
             transition: 0.4s ease; padding: 0; box-shadow: 0 4px 10px rgba(0,0,0,0.1);
         }
-        .search-slide.active { width: 250px; padding: 0 15px; }
+        .search-slide.active { width: 200px; padding: 0 15px; }
         .search-slide input { border: none; outline: none; width: 100%; font-size: 13px; margin-left: 10px; }
         .side-menu {
             position: fixed; left: -300px; top: 0; width: 280px; height: 100%;
@@ -165,14 +179,6 @@
         .side-menu.active { left: 0; }
         .side-menu a { color: #fff; text-decoration: none; display: block; padding: 15px 0; font-weight: 700; border-bottom: 1px solid #4d3829; font-size: 14px; }
         .close-menu { position: absolute; right: 20px; top: 20px; font-size: 25px; cursor: pointer; color: #fff; }
-        .nav-links-sub { list-style: none; display: flex; gap: 8px; flex-wrap: wrap; justify-content: center; }
-        .nav-links-sub li a {
-            text-decoration: none; color: #3d2b1f; font-weight: 700; font-size: 11px;
-            text-transform: uppercase; padding: 10px 14px;
-            background: rgba(255,255,255,0.6); border-radius: 4px; transition: 0.3s;
-            border: 1px solid rgba(61,43,31,0.1);
-        }
-        .nav-links-sub li a:hover { background: #8B5E3C; color: #fff; }
         .category-badge {
             display: inline-block; font-size: 10px; font-weight: 700;
             text-transform: uppercase; letter-spacing: 1px;
@@ -277,7 +283,7 @@
         h1, h2 { margin: 0; padding: 0; }
         .product-title {
             font-family: 'Playfair Display', serif; font-size: 26px; margin-bottom: 20px;
-            color: #222; border-left: 6px solid #8B5E3C; padding-left: 20px; line-height: 1.2;
+            color: #222; border-left: none; padding-left: 0; line-height: 1.2;
         }
         .description-box p { font-size: 15px; line-height: 1.8; color: #444; margin-bottom: 15px; text-align: justify; }
         .description-box h3 { font-size: 18px; margin: 20px 0 10px 0; color: #3d2b1f; }
@@ -315,8 +321,7 @@
             .product-card { padding: 32px 18px; }
         }
         @media (max-width: 1024px) {
-            .logo-text { display: none; }
-            .nav-links-sub { display: none; }
+            .wood-header { height: 60px; padding: 5px; }
             .product-card { flex-direction: column; }
             .product-image { 
                 position: static; 
@@ -340,14 +345,27 @@
         }
         @media (max-width: 768px) {
             .wood-header {
-                padding: 10px 20px 15px 20px;
-                min-height: 100px;
+                padding: 0 10px;
+                height: 50px;
+                min-height: 50px;
+                position: relative !important; /* Mobilde artık takip etmez */
+                background-image: url('bullars-header-tema2.jpg');
+                background-size: contain; /* Logonun kesilmeden tam ortalı görünmesi için */
             }
             .logo-text {
                 display: none;
             }
-            .logo-text.mobile-hide {
-                display: none;
+            .sub-nav-bar { padding: 8px 5px; }
+            .nav-links-sub {
+                gap: 5px;
+                margin-top: 0;
+                width: 100%;
+            }
+            .nav-links-sub li a {
+                font-size: 9px;
+                padding: 4px 6px;
+                background: #f9f9f9;
+                border-radius: 3px;
             }
             .vertical-tools {
                 left: 10px;
@@ -447,22 +465,22 @@
                 <input id="searchInput" type="text" placeholder="Ürün ara...">
             </div>
         </div>
-        <a href="index.html" class="logo-text" title="Bullars Tasarım - Kişiye Özel Lazer Kazımalı Ahşap Ürünler">BULLARS</a>
-        <nav itemscope itemtype="https://schema.org/SiteNavigationElement" role="navigation" aria-label="Ana Navigasyon">
-        <ul class="nav-links-sub">
-            <li><a href="index.html" title="Bullars Tasarım Ana Sayfası">ANA SAYFA</a></li>
-            <li><a href="tum-urunler.html" title="Tüm Ahşap Ürünleri Gör">TÜM ÜRÜNLER</a></li>
-            <li><a href="kisiye-ozel.html" title="Kişiye Özel Lazer Kazıma Ürünler">KİŞİYE ÖZEL</a></li>
-            <li><a href="ev-dekorasyon.html" title="Ev Dekorasyon Ürünleri">EV DEKORASYON</a></li>
-            <li><a href="ofis-dekorasyon.html" title="Ofis Dekorasyon Ürünleri">OFİS DEKORASYON</a></li>
-            <li><a href="isletmelere-ozel.html" title="İşletmelere Özel Kurumsal Ürünler">İŞLETMELERE ÖZEL</a></li>
-            <li><a href="mutfak-ev.html" title="Mutfak ve Ev Ürünleri">MUTFAK - EV</a></li>
-            <li><a href="ciftlere-ozel.html" title="Çiftlere Özel Hediye Ürünleri">ÇİFTLERE ÖZEL</a></li>
-            <li><a href="blog.html" title="Blog Yazıları">BLOG</a></li>
-            <li><a href="hakkimizda.html" title="Bullars Tasarım Hakkında">HAKKIMIZDA</a></li>
-        </ul>
-        </nav>
     </header>
+
+    <nav class="sub-nav-bar" itemscope itemtype="https://schema.org/SiteNavigationElement">
+        <ul class="nav-links-sub">
+            <li><a href="index.html" itemprop="url"><span itemprop="name">ANA SAYFA</span></a></li>
+            <li><a href="tum-urunler.html" itemprop="url"><span itemprop="name">TÜM ÜRÜNLER</span></a></li>
+            <li><a href="kisiye-ozel.html" itemprop="url"><span itemprop="name">KİŞİYE ÖZEL</span></a></li>
+            <li><a href="ev-dekorasyon.html" itemprop="url"><span itemprop="name">EV DEKORASYON</span></a></li>
+            <li><a href="ofis-dekorasyon.html" itemprop="url"><span itemprop="name">OFİS DEKORASYON</span></a></li>
+            <li><a href="isletmelere-ozel.html" itemprop="url"><span itemprop="name">İŞLETMELERE ÖZEL</span></a></li>
+            <li><a href="mutfak-ev.html" itemprop="url"><span itemprop="name">MUTFAK - EV</span></a></li>
+            <li><a href="ciftlere-ozel.html" itemprop="url"><span itemprop="name">ÇİFTLERE ÖZEL</span></a></li>
+            <li><a href="blog.html" itemprop="url"><span itemprop="name">BLOG</span></a></li>
+            <li><a href="hakkimizda.html" itemprop="url"><span itemprop="name">HAKKIMIZDA</span></a></li>
+        </ul>
+    </nav>
 
     <div class="catalog-container">
         <h1 style="font-family: 'Playfair Display', serif; font-size: 32px; color: #3d2b1f; margin-bottom: 20px; text-align: center; border-bottom: 3px solid #8B5E3C; padding-bottom: 20px; margin-bottom: 30px;">Tüm Ahşap Ürünler - Lazer Kazıma Hediyeler</h1>
@@ -960,6 +978,18 @@
         document.addEventListener('DOMContentLoaded', () => {
             setupCarouselControls();
             setupSearch();
+
+            // URL'den gelen arama sorgusunu işle
+            const urlParams = new URLSearchParams(window.location.search);
+            const searchQuery = urlParams.get('search');
+            if (searchQuery) {
+                const input = document.getElementById('searchInput');
+                if (input) {
+                    input.value = searchQuery;
+                    performSearch(searchQuery);
+                    if (window.innerWidth <= 768) toggleSearch(); // Mobilde arama barını aç
+                }
+            }
         });
     </script>
 </body>

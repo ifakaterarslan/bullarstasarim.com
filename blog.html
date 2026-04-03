@@ -23,25 +23,32 @@
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&family=Playfair+Display:wght@700;900&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
     <style>
-        * { margin: 0; padding: 0; box-sizing: border-box; }
+        * { margin: 0; padding: 0; box-sizing: border-box; -webkit-tap-highlight-color: transparent; }
         body { font-family: 'Montserrat', sans-serif; background-color: #f4f4f4; color: #333; line-height: 1.6; }
         
-        /* HEADER - ORIJINAL YAPI */
-        .wood-header { 
-            width: 100%; min-height: 140px; 
-            background: url('bullars-header-tema.jpg') center/cover no-repeat; 
-            display: flex; flex-direction: column; align-items: center; justify-content: flex-start; 
-            padding: 10px 50px 20px 50px; box-shadow: 0 4px 15px rgba(0,0,0,0.3); 
+        /* HEADER */
+        .wood-header {
+            width: 100%; height: 60px;
+            background: url('bullars-header-tema.jpg') center center / cover no-repeat;
+            display: flex; align-items: center; justify-content: center;
+            padding: 0 15px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.2);
             position: sticky; top: 0; z-index: 1000; 
         }
         
-        .logo-text { 
-            font-family: 'Playfair Display', serif; font-size: 36px; color: #3d2b1f; 
-            text-decoration: none; font-weight: 900; margin-top: -15px; margin-bottom: 15px; display: block;
-        }
+        .logo-text { display: none !important; }
 
-        /* DİKEY ARAÇLAR - TAMAMEN KORUNDU */
-        .vertical-tools { position: absolute; left: 15px; top: 15px; display: flex; flex-direction: column; gap: 10px; z-index: 1100; }
+        /* ARAÇLAR */
+        .vertical-tools {
+            position: absolute;
+            left: 15px;
+            top: 50%;
+            transform: translateY(-50%);
+            display: flex;
+            flex-direction: row;
+            gap: 10px;
+            z-index: 1100;
+        }
         .tool-btn {
             width: 42px; height: 42px; background: rgba(255, 255, 255, 0.8);
             border: 1px solid rgba(61, 43, 31, 0.2); border-radius: 8px;
@@ -51,11 +58,15 @@
         .tool-btn:hover { background: #8B5E3C; color: #fff; }
 
         .search-slide {
-            position: absolute; left: 55px; top: 52px; background: white; border: 1px solid #8B5E3C;
+            position: absolute;
+            left: 100px;
+            top: 50%;
+            transform: translateY(-50%);
+            background: white; border: 1px solid #8B5E3C;
             border-radius: 50px; height: 42px; width: 0; overflow: hidden; display: flex;
             align-items: center; transition: 0.4s ease; padding: 0; box-shadow: 0 4px 10px rgba(0,0,0,0.1);
         }
-        .search-slide.active { width: 250px; padding: 0 15px; }
+        .search-slide.active { width: 200px; padding: 0 15px; }
         .search-slide input { border: none; outline: none; width: 100%; font-size: 13px; margin-left: 10px; }
 
         /* YAN MENÜ - TAM LİSTE */
@@ -66,15 +77,8 @@
         .side-menu.active { left: 0; }
         .side-menu a { color: #fff; text-decoration: none; display: block; padding: 15px 0; font-weight: 700; border-bottom: 1px solid #4d3829; font-size: 14px; }
         .close-menu { position: absolute; right: 20px; top: 20px; font-size: 25px; cursor: pointer; }
-
-        /* NAVİGASYON - KISALTILMAMIŞ TAM LİSTE (INDEX.HTML'DEN) */
-        .nav-links-sub { list-style: none; display: flex; gap: 8px; flex-wrap: wrap; justify-content: center; }
-        .nav-links-sub li a { 
-            text-decoration: none; color: #3d2b1f; font-weight: 700; font-size: 10px; 
-            text-transform: uppercase; padding: 8px 12px; background: rgba(255, 255, 255, 0.6); 
-            border-radius: 4px; transition: 0.3s; border: 1px solid rgba(61, 43, 31, 0.1); 
-        }
-        .nav-links-sub li a:hover { background: #8B5E3C; color: #fff; }
+        
+        .nav-links-sub { display: none !important; }
         
         /* BLOG KONTEYNER */
         .blog-container { max-width: 900px; margin: 60px auto; padding: 0 20px; padding-bottom: 100px; }
@@ -93,7 +97,30 @@
         .wa-fixed { position: fixed; bottom: 85px; right: 30px; background-color: #25D366; color: white; width: 60px; height: 60px; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 30px; z-index: 2000; transition: 0.3s; }
         .footer-text { text-align: center; padding: 40px 20px; font-size: 14px; color: #555; border-top: 1px solid #ddd; margin-top: 50px; }
 
-        @media (max-width: 768px) { .blog-post { padding: 30px; } .nav-links-sub { display: none; } }
+        @media (max-width: 768px) {
+            .wood-header {
+                padding: 0 10px;
+                height: 50px;
+                min-height: 50px;
+                position: relative !important;
+                background-image: url('bullars-header-tema2.jpg');
+                background-size: contain;
+            }
+            .vertical-tools {
+                left: 10px;
+                top: 10px;
+                transform: none;
+            }
+            .tool-btn { width: 36px; height: 36px; font-size: 16px; }
+            .search-slide {
+                left: 100px;
+                height: 36px;
+                top: 10px;
+                transform: none;
+            }
+            .blog-post { padding: 30px; }
+            .nav-links-sub { display: none !important; }
+        }
     </style>
 </head>
 <body onclick="closeAll(event)">
@@ -121,20 +148,6 @@
                 <input type="text" placeholder="Ürün ara...">
             </div>
         </div>
-        <a href="index.html" class="logo-text">BULLARS</a>
-        
-        <ul class="nav-links-sub">
-            <li><a href="index.html">ANA SAYFA</a></li>
-            <li><a href="tum-urunler.html">TÜM ÜRÜNLER</a></li>
-            <li><a href="kisiye-ozel.html">KİŞİYE ÖZEL</a></li>
-            <li><a href="ev-dekorasyon.html">EV DEKORASYON</a></li>
-            <li><a href="ofis-dekorasyon.html">OFİS DEKORASYON</a></li>
-            <li><a href="isletmelere-ozel.html">İŞLETMELERE ÖZEL</a></li>
-            <li><a href="mutfak-ev.html">MUTFAK - EV</a></li>
-            <li><a href="ciftlere-ozel.html">ÇİFTLERE ÖZEL</a></li>
-            <li><a href="blog.html">BLOG</a></li>
-            <li><a href="hakkimizda.html">HAKKIMIZDA</a></li>
-        </ul>
     </header>
 
     <div class="blog-container">
@@ -251,6 +264,58 @@
                 <strong>Bambu:</strong> Hafif ve estetik görünüm<br>
                 <strong>Akrilik:</strong> Üst kısım bulanık, alt tarafı berrak hale gelir<br>
                 <strong>Deri:</strong> Sınırlı kullanım<br>
+                <strong>Cam:</strong> Ince çizgiler mümkün</p>
+                
+                <p>Bullars Tasarım'da lazer kazıma için %100 doğal ahşap ve bambu kullanılır, böylece hem estetik hem de dayanıklı ürünler elde edilir.</p>
+            </div>
+        </article>
+
+        <!-- YENİ BLOG POST 3 -->
+        <article class="blog-post" style="margin-top: 60px;">
+            <h1 class="blog-main-title">Ev Dekorasyon Trendleri 2024-2025: Doğal Ahşap ve Minimalist Tasarımları</h1>
+            
+            <div class="blog-content">
+                <p>2024 ve 2025 yılında ev dekorasyonunda baskın trend, teknolojiye rağmen doğala dönüş. Ev sahibi bireyler, plastik ve yapay malzeme yerine, doğal, sürdürülebilir ve organik tasarımları tercih ediyorlar. Ahşap, bambu ve benzer doğal malzeme, oturma odası, yatak odası, girişi ve hatta ofis dekorasyonunda ana rol oynamaktadır.</p>
+                
+                <h2>🌿 Doğal Ahşap Dekorasyon Neden Popüler?</h2>
+                <ul>
+                    <li><strong>Isıtıcı Estetik:</strong> Ahşap, ortama sıcaklık ve rahatlik katması</li>
+                    <li><strong>Esneklik:</strong> Hem modern hem de klasik tasarımlarla uyum sağlayabilir</li>
+                    <li><strong>Dayanıklılık:</strong> Yıllar boyu kalıcı ve güzel kalır; sadece daha karakterli hale gelir</li>
+                    <li><strong>Çevre Dostu:</strong> Sürdürülebilir ve yenlenebilir kaynaktan üretişim</li>
+                    <li><strong>Fiyat-Performans:</strong> Kaliteli ahşap dekor, pahalı dekorasyon malzemelerine göre daha uygun fiyatlı</li>
+                </ul>
+                
+                <h2>🎨 2024 Ev Dekorasyon Trendleri</h2>
+                <p><strong>Minimalist Ahşap Dekor:</strong> Sadelik ve işlevsellik ön planda<br>
+                <strong>Dokulu Ahşap Pano:</strong> Duvarlar ahşap dekorlarla bezenme<br>
+                <strong>Organik Şekiller:</strong> Doğal kütük tabloları ve asimetrik tasarımlar<br>
+                <strong>Koyu Ahşap Tonu:</strong> Ceviz ve veneer ağaçları tercihini artıyor<br>
+                <strong>Personalized Wall Art:</strong> Ev sahibinin isminin ya da ekip fotoğrafının yazpenilmesi</p>
+                
+                <h2>🏠 Bullars Tasarım'da Ev Dekorasyon Ürünleri</h2>
+                <p>Tüm bu trendleri karşılamak için Bullars Tasarım olarak:</p>
+                <ul>
+                    <li>Ayetel Kürsi işlemeli doğal ahşap kütük tablolar</li>
+                    <li>Kişiye özel isimli ahşap dekor ürünleri</li>
+                    <li>Bambu fotoğraflı çerçeveler</li>
+                    <li>Rustik ahşap bardak altlıkları ve aksessuarları</li>
+                </ul>
+                <p>Evinizin her köşesine doğallığı ve estetisyonu taşıyabilirsiniz. Yapay malzemeyi bırakıp, doğal şekilde dekorasyona başlayın!</p>
+            </div>
+        </article>
+    </div>
+
+    <a href="https://wa.me/905462171834" target="_blank" class="wa-fixed"><i class="fab fa-whatsapp"></i></a>
+    <div class="footer-text">BULLARS TASARIM 2026 Copyright © bullarstasarim.com Tüm hakları saklıdır.</div>
+
+    <script>
+        function toggleMenu() { event.stopPropagation(); document.getElementById('sideMenu').classList.toggle('active'); }
+        function toggleSearch() { event.stopPropagation(); document.getElementById('searchBar').classList.toggle('active'); }
+        function closeAll(event) { if (!document.getElementById('sideMenu').contains(event.target)) document.getElementById('sideMenu').classList.remove('active'); if (!document.getElementById('searchBar').contains(event.target)) document.getElementById('searchBar').classList.remove('active'); }
+    </script>
+</body>
+</html>         <strong>Deri:</strong> Sınırlı kullanım<br>
                 <strong>Cam:</strong> Ince çizgiler mümkün</p>
                 
                 <p>Bullars Tasarım'da lazer kazıma için %100 doğal ahşap ve bambu kullanılır, böylece hem estetik hem de dayanıklı ürünler elde edilir.</p>
