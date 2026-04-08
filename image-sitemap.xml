@@ -92,7 +92,12 @@
   <url>
     <loc>https://bullarstasarim.com/</loc> <!-- Canonical URL for homepage -->
     <lastmod>2026-04-08T16:54:00+03:00</lastmod>
-    <changefreq>daily</changefreq>
+    <changefreq>weekly</changefreq>
     <priority>1.0</priority>
+    <image:image>
+      <image:loc>https://bullarstasarim.com/bullars-yeni-giris.jpg</image:loc>
+      <image:title>Bullars Tasarım - Kişiye Özel Ahşap Ürünler</image:title>
+      <image:caption>Lazer kazıma ahşap hediyelikler ve kütük tablo tasarımları.</image:caption>
+    </image:image>
   </url>
 </urlset>
