@@ -74,8 +74,8 @@
             position: absolute;
             width: 100%;
             height: 100%;
-            object-fit: contain; 
-            object-position: center 40%; /* Görseli biraz yukarı taşıdık */
+            object-fit: cover; 
+            object-position: center center; 
             z-index: 1;
             /* Önemli: İkonlara tıklayabilmen için ekledim */
             pointer-events: none;
@@ -136,7 +136,7 @@
         .footer-notice a { color: #efb97d; text-decoration: none; font-weight: 800; }
 
         @media (max-width: 1024px) {
-            .bg-image { object-fit: contain; background-color: #000; object-position: center 38%; }
+            .bg-image { object-fit: contain; background-color: #000; object-position: center center; }
             header { display: none !important; } /* Mobilde üst navigasyonu tamamen sil */
             
             .left-controls-stacked { 
@@ -160,7 +160,7 @@
 </head>
 <body>
     <div class="main-container">
-        <img src="bullars-yeni-giris.jpg" alt="Bullars Tasarım" class="bg-image">
+        <img src="bullars-yeni-giris.jpg" alt="Bullars Tasarım" class="bg-image" width="1920" height="1080">
 
         <header>
             <nav>
