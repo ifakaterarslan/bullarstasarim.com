@@ -3,6 +3,9 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="google-site-verification" content="GSC_DOGRULAMA_KODUNUZ" />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <title>Ofis Dekorasyon | Lazer Kazıma Ahşap Ürünleri - Bullars Tasarım</title>
     <meta name="description" content="Ofis dekorasyon için lazer kazımalı ahşap ürünleri. Bardak altlığı, ahşap çerçeve, kütük tablo. Kurumsal tasarım, logo işleme, doğal ahşap. Çalışma masası, konferans odası, resepsiyon dekorasyonu.">
     <meta name="keywords" content="ofis dekorasyon, kurumsal tasarım, logo işlemeli ahşap, ahşap çerçeve, bardak altlığı, çalışma masası dekor, doğal ahşap ürünler, lazer kazıma, resepsiyon dekorasyonu, kütük tablo">
@@ -47,8 +50,6 @@
             box-shadow: 0 2px 10px rgba(0,0,0,0.2);
             position: sticky; top: 0; z-index: 2000;
         }
-        .sub-nav-bar { background: #fff; border-bottom: 1px solid #ddd; padding: 10px 0; box-shadow: 0 2px 5px rgba(0,0,0,0.05); position: relative; z-index: 1900; }
-        .sub-nav-bar { background: #fff; border-bottom: 1px solid #ddd; padding: 10px 0; box-shadow: 0 2px 5px rgba(0,0,0,0.05); position: relative; z-index: 1900; }
         .logo-text { display: none !important; }
 
         /* SOL ÜST DİKEY ARAÇLAR */
@@ -126,8 +127,68 @@
         /* ÜRÜN KARTLARI */
         .catalog-container { max-width: 1200px; margin: 60px auto; padding: 0 20px; padding-bottom: 100px; }
         .product-card { display: flex; gap: 50px; background: #fff; margin-bottom: 60px; padding: 40px; border-radius: 20px; box-shadow: 0 15px 40px rgba(0,0,0,0.06); align-items: flex-start; }
-        .product-image { flex: 1; text-align: center; position: sticky; top: 180px; }
-        .product-image img { width: 100%; max-width: 450px; border-radius: 12px; box-shadow: 0 5px 15px rgba(0,0,0,0.1); }
+        .product-image { 
+            flex: 1; 
+            text-align: center; 
+            position: relative;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            min-height: 260px;
+            overflow: hidden;
+            max-height: 340px;
+            width: 100%;
+        }
+        .image-carousel {
+            display: flex;
+            flex-wrap: nowrap;
+            overflow-x: auto;
+            overflow-y: hidden;
+            scroll-snap-type: x mandatory;
+            scroll-behavior: smooth;
+            gap: 0;
+            padding: 0;
+            margin: 0;
+            -webkit-overflow-scrolling: touch;
+            width: 100%;
+            max-width: 100%;
+            height: 280px;
+            max-height: 280px;
+            min-height: 280px;
+            position: relative;
+            border-radius: 12px;
+        }
+        .image-carousel img {
+            flex: 0 0 100%;
+            min-width: 100%;
+            max-width: 100%;
+            width: 100%;
+            height: 280px;
+            max-height: 280px;
+            object-fit: contain;
+            background-color: #f8f5f2;
+            scroll-snap-align: start;
+            scroll-snap-stop: always;
+            margin: 0;
+            padding: 0;
+            display: block;
+        }
+        .image-carousel::-webkit-scrollbar { width: 0; height: 0; }
+        .image-carousel {-ms-overflow-style: none; scrollbar-width: none; }
+        .carousel-controls {
+            position: absolute; top: 50%; right: 0; left: 0; transform: translateY(-50%);
+            display: flex; justify-content: space-between; align-items: center;
+            pointer-events: none;
+        }
+        .carousel-btn {
+            width: 35px; height: 35px; border: 1px solid rgba(61,43,31,0.5);
+            background: rgba(255,255,255,0.85); border-radius: 50%;
+            display: flex; align-items: center; justify-content: center;
+            pointer-events: all; cursor: pointer; transition: 0.2s;
+            color: #3d2b1f; font-size: 14px; font-weight: 700;
+        }
+        .carousel-btn:hover { background: #8B5E3C; color: #fff; }
+        .carousel-btn.disabled { opacity: .35; pointer-events: none; }
         .product-info { flex: 1.5; }
         .product-title { font-family: 'Playfair Display', serif; font-size: 26px; margin-bottom: 20px; color: #222; border-left: none; padding-left: 0; line-height: 1.2; }
         
@@ -239,10 +300,15 @@
     </nav>
 
     <div class="catalog-container">
+        <h1 style="font-family: 'Playfair Display', serif; font-size: 32px; color: #3d2b1f; margin-bottom: 20px; text-align: center; border-bottom: 3px solid #8B5E3C; padding-bottom: 20px; margin-bottom: 30px;">Ofis Dekorasyon Ürünleri - Lazer Kazıma Ahşap</h1>
         
         <div class="product-card">
             <div class="product-image">
-                <img src="kisiye-ozel-lazer-kazima-ahsap-bardak-altligi.jpg" alt="Kişiye Özel Ahşap Bardak Altlığı">
+                <div class="image-carousel">
+                    <img src="kisiye-ozel-lazer-kazima-ahsap-bardak-altligi.jpg" alt="Kişiye Özel Lazer Kazıma Ahşap Bardak Altlığı Ofis Aksesuarı" width="450" height="450" fetchpriority="high" decoding="async" itemprop="image">
+                    <img src="logo-islemeli-ahsap-bardak-altligi-kisiye-ozel-takim-logosu.jpg" alt="Logo işlemeli ahşap bardak altlığı" width="450" height="450" loading="lazy" decoding="async">
+                    <img src="oyuncu-masasi-ahsap-bardak-altligi-gaming-dekor.jpg" alt="Gaming dekorasyon bardak altlığı" width="450" height="450" loading="lazy" decoding="async">
+                </div>
             </div>
             <div class="product-info">
                 <h2 class="product-title">Kişiye Özel Ahşap Bardak Altlığı – Lazer İşleme İsim, Fotoğraf & Karakter Baskı (Çift Taraflı)</h2>
@@ -263,16 +329,46 @@
                         <h3>📸 Lazer İşleme – Silinmez & Kalıcı</h3>
                         <p>Baskı değil, lazer işleme teknolojisi kullanılır. Yıllarca ofis masanda ilk günkü gibi kalır.</p>
                     </div>
+                </div> 
+                <div itemprop="offers" itemscope itemtype="https://schema.org/Offer">
+                    <meta itemprop="priceCurrency" content="TRY">
+                    <meta itemprop="price" content="150.00">
+                    <link itemprop="availability" href="https://schema.org/InStock">
+                    <link itemprop="url" href="https://www.shopier.com/bullarstasarim/44832892">
+                    <div itemprop="shippingDetails" itemscope itemtype="https://schema.org/OfferShippingDetails">
+                        <div itemprop="shippingRate" itemscope itemtype="https://schema.org/MonetaryAmount">
+                            <meta itemprop="value" content="0">
+                            <meta itemprop="currency" content="TRY">
+                        </div>
+                        <div itemprop="shippingDestination" itemscope itemtype="https://schema.org/DefinedRegion">
+                            <meta itemprop="addressCountry" content="TR">
+                        </div>
+                    </div>
+                    <div itemprop="hasMerchantReturnPolicy" itemscope itemtype="https://schema.org/MerchantReturnPolicy">
+                        <meta itemprop="applicableCountry" content="TR">
+                        <meta itemprop="returnPolicyCategory" content="https://schema.org/MerchantReturnPolicyFullRefund">
+                        <meta itemprop="merchantReturnDays" content="14">
+                        <meta itemprop="returnMethod" content="https://schema.org/ReturnByMail">
+                        <meta itemprop="returnFees" content="https://schema.org/FreeReturn">
+                    </div>
                 </div>
-                <a href="https://www.shopier.com/bullarstasarim/44832892" target="_blank" class="buy-button">ŞİMDİ TASARLA VE AL</a>
+                <div itemprop="aggregateRating" itemscope itemtype="https://schema.org/AggregateRating">
+                    <meta itemprop="ratingValue" content="5">
+                    <meta itemprop="reviewCount" content="34">
+                </div>
+                <a href="https://www.shopier.com/bullarstasarim/44832892" target="_blank" rel="noopener noreferrer" class="buy-button">ŞİMDİ TASARLA VE AL</a>
             </div>
         </div>
 
+
         <div class="product-card">
             <div class="product-image">
-                <img src="kisiye-ozel-cift-fotografli-lazer-kazima-ahsap-cerceve.jpg" alt="Bambu Çerçeve">
+                <div class="image-carousel">
+                    <img src="kisiye-ozel-cift-fotografli-lazer-kazima-ahsap-cerceve.jpg" alt="Ofis İçin Kişiye Özel Çift Fotoğraflı Lazer İşleme Bambu Çerçeve" width="450" height="450" loading="lazy" decoding="async" itemprop="image">
+                    <img src="kisiye-ozel-ahsap-lazer-kazima-fotografli-cerceve-hediye.jpg" alt="Lazer kazıma bambu çerçeve" width="450" height="450" loading="lazy" decoding="async">
+                </div>
             </div>
-            <div class="product-info">
+            <div class="product-info" itemscope itemtype="https://schema.org/Product">
                 <h2 class="product-title">Kişiye Özel Çift Fotoğraflı Lazer İşleme Bambu Çerçeve – Ömürlük Anı Tasarımı</h2>
                 <div class="description-box">
                     <p>Ofis masanda en sevdiklerini yanından ayırma. Aynı çerçevede 2 farklı fotoğraf kullanabileceğin bu tasarım, çevre dostu doğal bambudan üretilmiştir. Minimal yapısı ile her ofis masasına uyum sağlar.</p>
@@ -287,16 +383,100 @@
                         <h3>📸 Çift Fotoğraf Özelliği – Tek Üründe İki Anı</h3>
                         <p>Aynı çerçevede iki farklı fotoğraf sergileme imkanı. Lazer işleme tekniği ile fotoğraflarınız ahşaba kalıcı olarak mühürlenir.</p>
                     </div>
+                </div> 
+                <div itemprop="offers" itemscope itemtype="https://schema.org/Offer">
+                    <meta itemprop="priceCurrency" content="TRY">
+                    <meta itemprop="price" content="450.00">
+                    <link itemprop="availability" href="https://schema.org/InStock">
+                    <link itemprop="url" href="https://www.shopier.com/bullarstasarim/44693959">
+                    <div itemprop="shippingDetails" itemscope itemtype="https://schema.org/OfferShippingDetails">
+                        <div itemprop="shippingRate" itemscope itemtype="https://schema.org/MonetaryAmount">
+                            <meta itemprop="value" content="0">
+                            <meta itemprop="currency" content="TRY">
+                        </div>
+                        <div itemprop="shippingDestination" itemscope itemtype="https://schema.org/DefinedRegion">
+                            <meta itemprop="addressCountry" content="TR">
+                        </div>
+                    </div>
+                    <div itemprop="hasMerchantReturnPolicy" itemscope itemtype="https://schema.org/MerchantReturnPolicy">
+                        <meta itemprop="applicableCountry" content="TR">
+                        <meta itemprop="returnPolicyCategory" content="https://schema.org/MerchantReturnPolicyFullRefund">
+                        <meta itemprop="merchantReturnDays" content="14">
+                        <meta itemprop="returnMethod" content="https://schema.org/ReturnByMail">
+                        <meta itemprop="returnFees" content="https://schema.org/FreeReturn">
+                    </div>
                 </div>
-                <a href="https://www.shopier.com/bullarstasarim/44693959" target="_blank" class="buy-button">FOTOĞRAFINI GÖNDER</a>
+                <div itemprop="aggregateRating" itemscope itemtype="https://schema.org/AggregateRating">
+                    <meta itemprop="ratingValue" content="4.9">
+                    <meta itemprop="reviewCount" content="28">
+                </div>
+                <a href="https://www.shopier.com/bullarstasarim/44693959" target="_blank" rel="noopener noreferrer" class="buy-button">FOTOĞRAFINI GÖNDER</a>
             </div>
         </div>
 
+
         <div class="product-card">
             <div class="product-image">
-                <img src="ayetel-kursi-islemeli-dogal-ahsap-kutuk-tablo.jpg" alt="Ayetel Kürsi İşlemeli Doğal Ahşap Kütük Tablo">
+                <div class="image-carousel">
+                    <img src="kisiye-ozel-tasarim-fotograf-lazer-kazima-ahsap-tablo.jpg" alt="Kişiye Özel Tasarım Fotoğraf Lazer Kazıma Ahşap Tablo Ofis Dekoru" width="450" height="280" loading="lazy" itemprop="image">
+                    <img src="fotograf-baski-ahsap-masaustu-dekor-lazer-isleme.jpg" alt="Fotoğraf baskı ahşap masaüstü dekor" width="450" height="280" loading="lazy" decoding="async">
+                    <img src="kisiye-ozel-hediyelik-fotograf-ahsap-tablo-ofis-dekorasyon.jpg" alt="Ofis dekorasyon fotoğraf tablo" width="450" height="280" loading="lazy" decoding="async">
+                </div>
             </div>
-            <div class="product-info">
+            <div class="product-info" itemscope itemtype="https://schema.org/Product">
+                <h2 class="product-title">Kişiye Özel Fotoğraf Lazer Kazıma Ahşap Tablo – Ofis & Masaüstü Dekor</h2>
+                <div class="description-box">
+                    <p>Çalışma masanıza karakter katan, silinmeyen lazer kazıma teknolojisi ile hazırlanan fotoğraflı ahşap tablo. Ofisinizde en özel anılarınız her zaman yanınızda.</p>
+                    <span class="read-more-btn" onclick="toggleReadMore(this)">devamını oku</span>
+                    <div class="hidden-content">
+                        <h3>🎯 OFİS KULLANIMI</h3>
+                        <ul>
+                            <li>Masaüstü dekorasyon</li>
+                            <li>Kurumsal hediye alternatifi</li>
+                            <li>Kişisel anı köşesi</li>
+                        </ul>
+                        <p>Minimal ve doğal görünümü sayesinde her türlü ofis mobilyasına uyum sağlar. 300 TL özel fiyatıyla.</p>
+                    </div> 
+                </div> 
+                <div itemprop="offers" itemscope itemtype="https://schema.org/Offer">
+                    <meta itemprop="priceCurrency" content="TRY">
+                    <meta itemprop="price" content="300.00">
+                    <link itemprop="availability" href="https://schema.org/InStock">
+                    <link itemprop="url" href="https://www.shopier.com/bullarstasarim/46058978">
+                    <div itemprop="shippingDetails" itemscope itemtype="https://schema.org/OfferShippingDetails">
+                        <div itemprop="shippingRate" itemscope itemtype="https://schema.org/MonetaryAmount">
+                            <meta itemprop="value" content="0">
+                            <meta itemprop="currency" content="TRY">
+                        </div>
+                        <div itemprop="shippingDestination" itemscope itemtype="https://schema.org/DefinedRegion">
+                            <meta itemprop="addressCountry" content="TR">
+                        </div>
+                    </div>
+                    <div itemprop="hasMerchantReturnPolicy" itemscope itemtype="https://schema.org/MerchantReturnPolicy">
+                        <meta itemprop="applicableCountry" content="TR">
+                        <meta itemprop="returnPolicyCategory" content="https://schema.org/MerchantReturnPolicyFullRefund">
+                        <meta itemprop="merchantReturnDays" content="14">
+                        <meta itemprop="returnMethod" content="https://schema.org/ReturnByMail">
+                        <meta itemprop="returnFees" content="https://schema.org/FreeReturn">
+                    </div>
+                </div>
+                <div itemprop="aggregateRating" itemscope itemtype="https://schema.org/AggregateRating">
+                    <meta itemprop="ratingValue" content="5">
+                    <meta itemprop="reviewCount" content="24">
+                </div>
+                <a href="https://www.shopier.com/bullarstasarim/46058978" target="_blank" rel="noopener noreferrer" class="buy-button">HEMEN SATIN AL</a>
+            </div>
+        </div>
+
+
+        <div class="product-card">
+            <div class="product-image">
+                <div class="image-carousel">
+                    <img src="ayetel-kursi-islemeli-dogal-ahsap-kutuk-tablo.jpg" alt="Ayetel Kürsi İşlemeli Doğal Ahşap Kütük Tablo Ofis Duvar Dekoru" width="450" height="450" loading="lazy" decoding="async" itemprop="image">
+                    <img src="islami-hat-yazili-ahsap-kutuk-duvar-tablosu-lazer-isleme-dekor.jpg" alt="İslami hat yazılı ahşap kütük tablo" width="450" height="450" loading="lazy" decoding="async">
+                </div>
+            </div>
+            <div class="product-info" itemscope itemtype="https://schema.org/Product">
                 <h2 class="product-title">Ayetel Kürsi Lazer İşlemeli Doğal Ahşap Kütük Tablo – Kişiye Özel Tasarım</h2>
                 <div class="description-box">
                     <p>Doğallığın ve maneviyatın gücü ofisinizde. Tamamen gerçek ağaç kütüğünden üretilen bu özel tasarım, çalışma alanınıza huzur ve estetik bir dokunuş katar.</p>
@@ -309,14 +489,40 @@
                             <li>✔ Dayanıklı ve uzun ömürlü</li>
                             <li>✔ Standı ile masa üstü kullanım</li>
                         </ul>
+                    </div> 
+                </div> 
+                <div itemprop="offers" itemscope itemtype="https://schema.org/Offer">
+                    <meta itemprop="priceCurrency" content="TRY">
+                    <meta itemprop="price" content="550.00">
+                    <link itemprop="availability" href="https://schema.org/InStock">
+                    <link itemprop="url" href="https://www.shopier.com/bullarstasarim/44561052">
+                    <div itemprop="shippingDetails" itemscope itemtype="https://schema.org/OfferShippingDetails">
+                        <div itemprop="shippingRate" itemscope itemtype="https://schema.org/MonetaryAmount">
+                            <meta itemprop="value" content="0">
+                            <meta itemprop="currency" content="TRY">
+                        </div>
+                        <div itemprop="shippingDestination" itemscope itemtype="https://schema.org/DefinedRegion">
+                            <meta itemprop="addressCountry" content="TR">
+                        </div>
+                    </div>
+                    <div itemprop="hasMerchantReturnPolicy" itemscope itemtype="https://schema.org/MerchantReturnPolicy">
+                        <meta itemprop="applicableCountry" content="TR">
+                        <meta itemprop="returnPolicyCategory" content="https://schema.org/MerchantReturnPolicyFullRefund">
+                        <meta itemprop="merchantReturnDays" content="14">
+                        <meta itemprop="returnMethod" content="https://schema.org/ReturnByMail">
+                        <meta itemprop="returnFees" content="https://schema.org/FreeReturn">
                     </div>
                 </div>
-                <a href="https://www.shopier.com/bullarstasarim/44561052" target="_blank" class="buy-button">HEMEN SİPARİŞ VER</a>
+                <div itemprop="aggregateRating" itemscope itemtype="https://schema.org/AggregateRating">
+                    <meta itemprop="ratingValue" content="5">
+                    <meta itemprop="reviewCount" content="41">
+                </div>
+                <a href="https://www.shopier.com/bullarstasarim/44561052" target="_blank" rel="noopener noreferrer" class="buy-button">HEMEN SİPARİŞ VER</a>
             </div>
         </div>
     </div>
 
-    <a href="https://wa.me/905462171834" target="_blank" class="wa-fixed"><i class="fab fa-whatsapp"></i></a>
+    <a href="https://wa.me/905462171834" target="_blank" rel="noopener noreferrer" class="wa-fixed"><i class="fab fa-whatsapp"></i></a>
 
     <footer class="footer-notice">
         <div class="footer-top-text">
@@ -358,6 +564,12 @@
             }
         }
 
+        function setupSearch() {
+            const input = document.getElementById('searchInput');
+            if (input) {
+                input.addEventListener('input', () => performSearch(input.value));
+            }
+        }
 
         function performSearch(query) {
             const term = query.trim().toLowerCase();
@@ -368,24 +580,6 @@
                 const match = term === '' || title.includes(term) || desc.includes(term);
                 card.style.display = match ? 'flex' : 'none';
             });
-        }
-
-        function setupSearch() {
-            const input = document.getElementById('searchInput');
-            if (input) {
-                input.addEventListener('input', () => performSearch(input.value));
-            }
-        }
-
-        function toggleReadMore(btn) {
-            const hiddenContent = btn.nextElementSibling;
-            if (hiddenContent.style.display === "block") {
-                hiddenContent.style.display = "none";
-                btn.innerText = "devamını oku";
-            } else {
-                hiddenContent.style.display = "block";
-                btn.innerText = "küçült";
-            }
         }
 
         document.addEventListener('DOMContentLoaded', () => {

@@ -3,6 +3,9 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="google-site-verification" content="GSC_DOGRULAMA_KODUNUZ" />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <title>Mutfak - Ev | Lazer Kazıma Ahşap Ürünleri - Bullars Tasarım</title>
     <meta name="description" content="Mutfak ve ev alanı için lazer kazımalı ahşap ürünleri. İroko sunum tahtası, çay kahve aksessuarları, kişiye özel isim yazılı. Doğal ahşap, su dayanıklı, profesyonel servis ve sunum. Restoran, kafe, mutfak dekorasyonu.">
     <meta name="keywords" content="sunum tahtası, ahşap sunum, iroko ahşap, mutfak dekorasyon, kahve servis, çay sunumluk, kişiye özel tasarım, lazer kazıma, ahşap aksessuarı, ev dekorasyonu, profesyonel sunum">
@@ -125,8 +128,68 @@
         /* KATALOG KONTEYNER */
         .catalog-container { max-width: 1200px; margin: 60px auto; padding: 0 20px; padding-bottom: 100px; }
         .product-card { display: flex; gap: 50px; background: #fff; margin-bottom: 60px; padding: 40px; border-radius: 20px; box-shadow: 0 15px 40px rgba(0,0,0,0.06); align-items: flex-start; }
-        .product-image { flex: 1; text-align: center; position: sticky; top: 180px; }
-        .product-image img { width: 100%; max-width: 450px; border-radius: 12px; }
+        .product-image { 
+            flex: 1; 
+            text-align: center; 
+            position: relative;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            min-height: 260px;
+            overflow: hidden;
+            max-height: 340px;
+            width: 100%;
+        }
+        .image-carousel {
+            display: flex;
+            flex-wrap: nowrap;
+            overflow-x: auto;
+            overflow-y: hidden;
+            scroll-snap-type: x mandatory;
+            scroll-behavior: smooth;
+            gap: 0;
+            padding: 0;
+            margin: 0;
+            -webkit-overflow-scrolling: touch;
+            width: 100%;
+            max-width: 100%;
+            height: 280px;
+            max-height: 280px;
+            min-height: 280px;
+            position: relative;
+            border-radius: 12px;
+        }
+        .image-carousel img {
+            flex: 0 0 100%;
+            min-width: 100%;
+            max-width: 100%;
+            width: 100%;
+            height: 280px;
+            max-height: 280px;
+            object-fit: contain;
+            background-color: #f8f5f2;
+            scroll-snap-align: start;
+            scroll-snap-stop: always;
+            margin: 0;
+            padding: 0;
+            display: block;
+        }
+        .image-carousel::-webkit-scrollbar { width: 0; height: 0; }
+        .image-carousel {-ms-overflow-style: none; scrollbar-width: none; }
+        .carousel-controls {
+            position: absolute; top: 50%; right: 0; left: 0; transform: translateY(-50%);
+            display: flex; justify-content: space-between; align-items: center;
+            pointer-events: none;
+        }
+        .carousel-btn {
+            width: 35px; height: 35px; border: 1px solid rgba(61,43,31,0.5);
+            background: rgba(255,255,255,0.85); border-radius: 50%;
+            display: flex; align-items: center; justify-content: center;
+            pointer-events: all; cursor: pointer; transition: 0.2s;
+            color: #3d2b1f; font-size: 14px; font-weight: 700;
+        }
+        .carousel-btn:hover { background: #8B5E3C; color: #fff; }
+        .carousel-btn.disabled { opacity: .35; pointer-events: none; }
         .product-info { flex: 1.5; }
         .product-title { font-family: 'Playfair Display', serif; font-size: 26px; margin-bottom: 20px; border-left: none; padding-left: 0; line-height: 1.2; }
         
@@ -213,7 +276,7 @@
             <div class="tool-btn" onclick="toggleSearch()"><i class="fas fa-search"></i></div>
             <div class="search-slide" id="searchBar">
                 <i class="fas fa-search" style="color:#8B5E3C; margin-right: 5px;"></i>
-                <input type="text" placeholder="Ürün ara...">
+                <input id="searchInput" type="text" placeholder="Ürün ara...">
             </div>
         </div>
     </header>
@@ -234,12 +297,16 @@
     </nav>
 
     <div class="catalog-container">
+        <h1 style="font-family: 'Playfair Display', serif; font-size: 32px; color: #3d2b1f; margin-bottom: 20px; text-align: center; border-bottom: 3px solid #8B5E3C; padding-bottom: 20px; margin-bottom: 30px;">Mutfak ve Ev İçin Lazer Kazıma Ahşap Ürünleri</h1>
         <div class="product-card">
             <div class="product-image">
-                <img src="kisiye-ozel-iroko-ahsap-kahve-sunum-tahtasi.jpg" alt="Kişiye Özel Çay & Kahve Sunum Tahtası">
+                <div class="image-carousel">
+                    <img src="kisiye-ozel-iroko-ahsap-kahve-sunum-tahtasi.jpg" alt="Kişiye Özel İroko Ahşap Çay ve Kahve Sunum Tahtası" width="450" height="450" fetchpriority="high" decoding="async" itemprop="image">
+                    <img src="kisiye-ozel-ahsap-sunum-tahtasi-olculu-kahve-servis-hediyesi.jpg" alt="İsim yazılı iroko sunum tahtası" width="450" height="450" loading="lazy" decoding="async">
+                </div>
             </div>
-            <div class="product-info">
-                <h2 class="product-title">Kişiye Özel Çay & Kahve Sunum Tahtası – İsim & Logo Yazılabilir İroko Ahşap Tasarım</h2>
+            <div class="product-info" itemscope itemtype="https://schema.org/Product">
+                <h2 class="product-title" itemprop="name">Kişiye Özel Çay & Kahve Sunum Tahtası – İsim & Logo Yazılabilir İroko Ahşap Tasarım</h2>
                 <div class="description-box">
                     <p>Sunum artık sadece servis değil, markanı ve tarzını yansıtma işi. Kişiye özel üretilen bu iroko ağacı çay & kahve sunum tahtası, üzerine isim, logo veya özel yazı işlenerek hem bireysel kullanım hem de işletmeler için premium bir sunum deneyimi sunar.
                     Kafeler, restoranlar ve işletmeler için marka kimliğini güçlendiren, ev kullanıcıları için ise şık ve farklı bir detay olan bu ürün, sunumlarınıza profesyonel bir dokunuş katar.</p>
@@ -251,12 +318,140 @@
                             <li>✔ Uzun ömürlü kullanım</li>
                             <li>✔ Suya ve neme dayanıklı</li>
                             <li>✔ Yoğun kullanıma uygun</li>
-                            <li>✔ Lazer işleme ile kalıcı marka & isim detayları</li>
-                        </ul>
+                            <li>✔ Lazer işleme ile kalıcı marka & isim detayları</li> 
+                        </ul> 
                     </div>
                 </div>
-                <a href="https://www.shopier.com/bullarstasarim" target="_blank" class="buy-button">HEMEN MUTFAĞINA EKLE</a>
+                <div itemprop="offers" itemscope itemtype="https://schema.org/Offer">
+                    <meta itemprop="priceCurrency" content="TRY">
+                    <meta itemprop="price" content="650.00">
+                    <link itemprop="availability" href="https://schema.org/InStock">
+                    <link itemprop="url" href="https://www.shopier.com/bullarstasarim/44632534?app_id=13">
+                    <div itemprop="shippingDetails" itemscope itemtype="https://schema.org/OfferShippingDetails">
+                        <div itemprop="shippingRate" itemscope itemtype="https://schema.org/MonetaryAmount">
+                            <meta itemprop="value" content="0">
+                            <meta itemprop="currency" content="TRY">
+                        </div>
+                        <div itemprop="shippingDestination" itemscope itemtype="https://schema.org/DefinedRegion">
+                            <meta itemprop="addressCountry" content="TR">
+                        </div>
+                    </div>
+                    <div itemprop="hasMerchantReturnPolicy" itemscope itemtype="https://schema.org/MerchantReturnPolicy">
+                        <meta itemprop="applicableCountry" content="TR">
+                        <meta itemprop="returnPolicyCategory" content="https://schema.org/MerchantReturnPolicyFullRefund">
+                        <meta itemprop="merchantReturnDays" content="14">
+                        <meta itemprop="returnMethod" content="https://schema.org/ReturnByMail">
+                        <meta itemprop="returnFees" content="https://schema.org/FreeReturn">
+                    </div>
+                </div>
+                <div itemprop="aggregateRating" itemscope itemtype="https://schema.org/AggregateRating">
+                    <meta itemprop="ratingValue" content="4.9">
+                    <meta itemprop="reviewCount" content="12">
+                </div>
+                <a href="https://www.shopier.com/bullarstasarim/44632534?app_id=13" target="_blank" rel="noopener noreferrer" class="buy-button">HEMEN MUTFAĞINA EKLE</a>
             </div>
+        </div>
+
+
+        <!-- YENİ ÜRÜN: Kişiye Özel Ahşap Kesme Tahtası -->
+        <div class="product-card" id="urun2" itemscope itemtype="https://schema.org/Product">
+            <link itemprop="url" href="https://bullarstasarim.com/mutfak-ev.html#urun2">
+            <div class="product-image">
+                <div class="image-carousel">
+                    <img src="kisisel-ahsap-kesme-tahtasi-isim-logo-yazili.jpg" alt="Kişiye özel isim logo yazılı ahşap kesme tahtası" itemprop="image" width="450" height="450" fetchpriority="high" decoding="async">
+                    <img src="ozel-tasarim-kesme-tahtasi-lazer-islemeli.jpg" alt="Özel tasarım lazer işlemeli ahşap kesme tahtası" width="450" height="450" loading="lazy" decoding="async">
+                    <img src="logolu-sunum-tahtasi-restoran-kafe.jpg" alt="Logolu sunum tahtası restoran kafe için" width="450" height="450" loading="lazy" decoding="async">
+                    <img src="hediyelik-kisisel-mutfak-kesme-tahtasi.jpg" alt="Hediyelik kişisel mutfak kesme tahtası" width="450" height="450" loading="lazy" decoding="async">
+                </div>
+            </div>
+            <div class="product-info">
+                <meta itemprop="sku" content="BT-KESME-01">
+                <meta itemprop="mpn" content="BT-KESME-01">
+                <div itemprop="brand" itemscope itemtype="https://schema.org/Brand"><meta itemprop="name" content="Bullars Tasarım"></div>
+                <span class="category-badge">Kişiye Özel · İşletmelere Özel · Mutfak - Ev</span>
+                <h2 class="product-title" itemprop="name">Kişiye Özel Ahşap Kesme Tahtası | İsim, Logo ve Özel Tasarım Lazer İşlemeli</h2>
+                <div itemprop="aggregateRating" itemscope itemtype="https://schema.org/AggregateRating">
+                    <meta itemprop="ratingValue" content="5">
+                    <meta itemprop="reviewCount" content="15">
+                </div> 
+                <div itemprop="offers" itemscope itemtype="https://schema.org/Offer">
+                    <meta itemprop="priceCurrency" content="TRY">
+                    <meta itemprop="price" content="900.00">
+                    <link itemprop="availability" href="https://schema.org/InStock">
+                    <link itemprop="url" href="https://www.shopier.com/bullarstasarim/46073456">
+                    <div itemprop="shippingDetails" itemscope itemtype="https://schema.org/OfferShippingDetails">
+                        <div itemprop="shippingRate" itemscope itemtype="https://schema.org/MonetaryAmount">
+                            <meta itemprop="value" content="0">
+                            <meta itemprop="currency" content="TRY">
+                        </div>
+                        <div itemprop="shippingDestination" itemscope itemtype="https://schema.org/DefinedRegion">
+                            <meta itemprop="addressCountry" content="TR">
+                        </div>
+                    </div>
+                    <div itemprop="hasMerchantReturnPolicy" itemscope itemtype="https://schema.org/MerchantReturnPolicy">
+                        <meta itemprop="applicableCountry" content="TR">
+                        <meta itemprop="returnPolicyCategory" content="https://schema.org/MerchantReturnPolicyFullRefund">
+                        <meta itemprop="merchantReturnDays" content="14">
+                        <meta itemprop="returnMethod" content="https://schema.org/ReturnByMail">
+                        <meta itemprop="returnFees" content="https://schema.org/FreeReturn">
+                    </div>
+                </div>
+                <div class="description-box">
+                    <p itemprop="description">Mutfağınıza estetik bir dokunuş katarken tamamen size özel bir deneyim sunan kişiye özel ahşap kesme tahtası, fonksiyonelliği ve kişiselleştirilebilir tasarımı bir araya getirir. Üzerine istediğiniz isim, yazı, logo, amblem, tarih ya da özel bir figür işlenerek sıradan bir mutfak ürününü anlamlı ve özgün bir parçaya dönüştürür.</p>
+                    <span class="read-more-btn" onclick="toggleReadMore(this)">devamını oku</span>
+                    <div class="hidden-content">
+                        <p>Bu ürün sadece bir kesme tahtası değil; aynı zamanda kişisel bir hikaye taşıyan özel bir tasarım objesidir. İster günlük kullanımda ister sunumlarda, bulunduğu ortama karakter katar ve dikkat çeker.</p>
+                        <p>Modern lazer işleme teknolojisi sayesinde işlenen tasarımlar uzun ömürlüdür ve silinmez. Bu sayede hem kullanışlı hem de kalıcı bir hatıra sunar.</p>
+                        <h3>🎯 KULLANIM ALANLARI</h3>
+                        <p>Bu ürün çok yönlü kullanım avantajı ile farklı alanlarda değerlendirilebilir:</p>
+                        <ul>
+                            <li>Mutfakta sebze, meyve ve et doğrama</li>
+                            <li>Kahvaltı ve sunum tahtası olarak servislerde kullanım</li>
+                            <li>Ev dekorasyonunda estetik obje olarak sergileme</li>
+                            <li>Kafe, restoran ve işletmelerde özel sunum tahtası</li>
+                            <li>Marka logosu ile kurumsal kullanım</li>
+                        </ul>
+                        <h3>🎁 HEDİYELİK KULLANIM SENARYOLARI</h3>
+                        <p>Kişiselleştirme özelliği sayesinde yüksek duygusal değere sahip bir hediyeye dönüşür:</p>
+                        <ul>
+                            <li>Yeni ev hediyesi</li>
+                            <li>Düğün, nişan ve söz hediyesi</li>
+                            <li>Sevgiliye / eşe özel anlamlı hediye</li>
+                            <li>Anneler günü, doğum günü, yıl dönümü</li>
+                            <li>İşletmeler için kurumsal hediye ve promosyon ürünü</li>
+                        </ul>
+                        <h3>⚡ SINIRSIZ KİŞİSELLEŞTİRME</h3>
+                        <p>Bu ürünü özel yapan en güçlü özellik: 👉 İstediğiniz her şey işlenebilir</p>
+                        <ul>
+                            <li>İsim ve özel yazılar</li>
+                            <li>Marka logosu</li>
+                            <li>Amblem ve semboller</li>
+                            <li>Fotoğraf ve siluetler</li>
+                            <li>Hayvan figürleri (örneğin geyik, kuş vb.)</li>
+                            <li>Özel tasarım grafikler</li>
+                        </ul>
+                        <p>Tamamen size özel üretim yapılır. Her ürün benzersizdir.</p>
+                        <h3>🏪 İŞLETMELER İÇİN AVANTAJ</h3>
+                        <p>Bu ürün sadece bireysel değil, işletmeler için de güçlü bir çözümdür:</p>
+                        <ul>
+                            <li>Restoran ve kafeler için logolu sunum tahtası</li>
+                            <li>Marka bilinirliği artıran özel servis ürünleri</li>
+                            <li>Kurumsal hediye ve promosyon ürünü</li>
+                            <li>Butik işletmeler için farklılaşma aracı</li>
+                        </ul>
+                        <p>👉 İşletmenizi standarttan çıkarır, marka kimliği kazandırır</p>
+                        <h3>📐 TEKNİK DETAYLAR</h3>
+                        <ul>
+                            <li>Dayanıklı ahşap yüzey</li>
+                            <li>Lazer işleme ile kalıcı tasarım</li>
+                            <li>Çok amaçlı kullanım (kesme + sunum + dekor)</li>
+                            <li>Uzun ömürlü ve sağlam yapı</li>
+                        </ul>
+                    </div> 
+                </div> 
+                <a href="https://www.shopier.com/bullarstasarim/46073456" target="_blank" rel="noopener noreferrer" class="buy-button" itemprop="url">ŞİMDİ TASARLA VE AL</a> 
+            </div>
+
         </div>
     </div>
 
@@ -321,8 +516,34 @@
             }
         }
 
+        function setupCarouselControls() {
+            document.querySelectorAll('.product-image').forEach((container) => {
+                const carousel = container.querySelector('.image-carousel');
+                if (!carousel) return;
+
+                // Basit bir kontrol ekleme, eğer carousel varsa
+                const leftBtn = document.createElement('button');
+                leftBtn.className = 'carousel-btn';
+                leftBtn.innerHTML = '‹';
+                leftBtn.style.position = 'absolute'; leftBtn.style.left = '5px'; leftBtn.style.top = '50%'; leftBtn.style.transform = 'translateY(-50%)';
+                leftBtn.style.zIndex = '10'; leftBtn.style.background = 'rgba(255,255,255,0.7)'; leftBtn.style.border = 'none'; leftBtn.style.borderRadius = '50%'; leftBtn.style.width = '30px'; leftBtn.style.height = '30px';
+                leftBtn.onclick = () => carousel.scrollBy({ left: -carousel.clientWidth, behavior: 'smooth' });
+
+                const rightBtn = document.createElement('button');
+                rightBtn.className = 'carousel-btn';
+                rightBtn.innerHTML = '›';
+                rightBtn.style.position = 'absolute'; rightBtn.style.right = '5px'; rightBtn.style.top = '50%'; rightBtn.style.transform = 'translateY(-50%)';
+                rightBtn.style.zIndex = '10'; rightBtn.style.background = 'rgba(255,255,255,0.7)'; rightBtn.style.border = 'none'; rightBtn.style.borderRadius = '50%'; rightBtn.style.width = '30px'; rightBtn.style.height = '30px';
+                rightBtn.onclick = () => carousel.scrollBy({ left: carousel.clientWidth, behavior: 'smooth' });
+
+                container.appendChild(leftBtn);
+                container.appendChild(rightBtn);
+            });
+        }
+
         document.addEventListener('DOMContentLoaded', () => {
             setupSearch();
+            setupCarouselControls();
         });
     </script>
 </body>

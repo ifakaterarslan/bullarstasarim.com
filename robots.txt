@@ -1,9 +1,8 @@
 User-agent: *
 Allow: /
-
 Disallow: /admin/
 Disallow: /private/
 Disallow: /cgi-bin/
+Disallow: /404.html
 
 Sitemap: https://bullarstasarim.com/sitemap.xml
-Sitemap: https://bullarstasarim.com/image-sitemap.xml

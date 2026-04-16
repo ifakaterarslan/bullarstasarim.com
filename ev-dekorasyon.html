@@ -1,9 +1,9 @@
-<!DOCTYPE html>
+<!uDOCTYPE html>
 <html lang="tr">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Ev Dekorasyon | Lazer Kazıma Ahşap Ürünleri - Bullars Tasarım</title>
+    <title>Ev Dekorasyon Ürünleri | Lazer Kazıma Ahşap Tablo, Çerçeve, Bardak Altlığı - Bullars Tasarım</title>
     <meta name="description" content="Ev dekorasyon için lazer kazımalı ahşap ürünleri. Ayetel Kürsi, ahşap çerçeve, bardak altlığı, kütük tablo. Doğal ahşap, el yapımı, ömürlük kalıcılık. Oturma odası, yatak odası, koridor dekorasyon.">
     <meta name="keywords" content="ev dekorasyon, lazer kazıma ahşap, ahşap çerçeve, ayetel kürsi tablo, ahşap dekorasyon, oturma odası dekor, yatak odası, doğal ahşap ürünler, dekoratif ahşap, ev aksessuarları">
     <meta name="robots" content="index,follow,max-image-preview:large,max-snippet:-1,max-video-preview:-1">
@@ -16,8 +16,6 @@
     <meta name="twitter:card" content="summary_large_image">
     <meta name="twitter:title" content="Ev Dekorasyon - Lazer Kazıma Ahşap Ürünleri">
     <meta name="twitter:description" content="Eviniz için doğal ahşap dekorasyon çözümleri. Ayetel Kürsi, çerçeve, bardak altlığı, kütük tablo.">
-    <meta name="image" content="https://bullarstasarim.com/ayetel-kursi-islemeli-dogal-ahsap-kutuk-tablo.jpg">
-    <link rel="image_src" href="https://bullarstasarim.com/ayetel-kursi-islemeli-dogal-ahsap-kutuk-tablo.jpg">
     <link rel="sitemap" type="application/xml" href="https://bullarstasarim.com/sitemap.xml">
     <link rel="icon" href="favicon.png" type="image/png">
     <link rel="shortcut icon" href="favicon.png" type="image/png">
@@ -122,8 +120,68 @@
         /* ÜRÜNLER */
         .catalog-container { max-width: 1200px; margin: 60px auto; padding: 0 20px; padding-bottom: 100px; }
         .product-card { display: flex; gap: 50px; background: #fff; margin-bottom: 60px; padding: 40px; border-radius: 20px; box-shadow: 0 15px 40px rgba(0,0,0,0.06); align-items: flex-start; }
-        .product-image { flex: 1; text-align: center; position: sticky; top: 180px; }
-        .product-image img { width: 100%; max-width: 450px; border-radius: 12px; box-shadow: 0 5px 15px rgba(0,0,0,0.1); }
+        .product-image { 
+            flex: 1; 
+            text-align: center; 
+            position: relative;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            min-height: 260px;
+            overflow: hidden;
+            max-height: 340px;
+            width: 100%;
+        }
+        .image-carousel {
+            display: flex;
+            flex-wrap: nowrap;
+            overflow-x: auto;
+            overflow-y: hidden;
+            scroll-snap-type: x mandatory;
+            scroll-behavior: smooth;
+            gap: 0;
+            padding: 0;
+            margin: 0;
+            -webkit-overflow-scrolling: touch;
+            width: 100%;
+            max-width: 100%;
+            height: 280px;
+            max-height: 280px;
+            min-height: 280px;
+            position: relative;
+            border-radius: 12px;
+        }
+        .image-carousel img {
+            flex: 0 0 100%;
+            min-width: 100%;
+            max-width: 100%;
+            width: 100%;
+            height: 280px;
+            max-height: 280px;
+            object-fit: contain;
+            background-color: #f8f5f2;
+            scroll-snap-align: start;
+            scroll-snap-stop: always;
+            margin: 0;
+            padding: 0;
+            display: block;
+        }
+        .image-carousel::-webkit-scrollbar { width: 0; height: 0; }
+        .image-carousel {-ms-overflow-style: none; scrollbar-width: none; }
+        .carousel-controls {
+            position: absolute; top: 50%; right: 0; left: 0; transform: translateY(-50%);
+            display: flex; justify-content: space-between; align-items: center;
+            pointer-events: none;
+        }
+        .carousel-btn {
+            width: 35px; height: 35px; border: 1px solid rgba(61,43,31,0.5);
+            background: rgba(255,255,255,0.85); border-radius: 50%;
+            display: flex; align-items: center; justify-content: center;
+            pointer-events: all; cursor: pointer; transition: 0.2s;
+            color: #3d2b1f; font-size: 14px; font-weight: 700;
+        }
+        .carousel-btn:hover { background: #8B5E3C; color: #fff; }
+        .carousel-btn.disabled { opacity: .35; pointer-events: none; }
         .product-info { flex: 1.5; }
         .product-title { font-family: 'Playfair Display', serif; font-size: 26px; margin-bottom: 20px; color: #222; border-left: none; padding-left: 0; line-height: 1.2; }
         
@@ -236,10 +294,16 @@
     </nav>
 
     <div class="catalog-container">
+        <h1 style="font-family: 'Playfair Display', serif; font-size: 32px; color: #3d2b1f; margin-bottom: 20px; text-align: center; border-bottom: 3px solid #8B5E3C; padding-bottom: 20px; margin-bottom: 30px;">Ev Dekorasyon Ürünleri - Lazer Kazıma Ahşap</h1>
         <div class="product-card">
-            <div class="product-image"><img src="ayetel-kursi-islemeli-dogal-ahsap-kutuk-tablo.jpg" alt="Ayetel Kürsi"></div>
-            <div class="product-info">
-                <h2 class="product-title">Ayetel Kürsi Lazer İşlemeli Doğal Ahşap Kütük Tablo – Kişiye Özel Tasarım</h2>
+            <div class="product-image">
+                <div class="image-carousel">
+                    <img src="ayetel-kursi-islemeli-dogal-ahsap-kutuk-tablo.jpg" alt="Ayetel Kürsi İşlemeli Doğal Ahşap Kütük Tablo Ev Dekoru" width="450" height="450" loading="lazy" decoding="async">
+                    <img src="islami-hat-yazili-ahsap-kutuk-duvar-tablosu-lazer-isleme-dekor.jpg" alt="İslami hat yazılı ahşap kütük duvar tablosu" width="450" height="450" loading="lazy" decoding="async">
+                </div>
+            </div>
+            <div class="product-info" itemscope itemtype="https://schema.org/Product">
+                <h2 class="product-title" itemprop="name">Ayetel Kürsi Lazer İşlemeli Doğal Ahşap Kütük Tablo – Kişiye Özel Tasarım</h2>
                 <div class="description-box">
                     <p>Doğallığın ve maneviyatın en güçlü birleşimi: Ayetel Kürsi işlemeli doğal ahşap kütük tablo ile yaşam alanlarınıza hem estetik hem de huzur katın. Tamamen gerçek ağaç kütüğünden üretilen bu özel tasarım, her biri kendine özgü damar yapısı ve dokusuyla benzersiz bir dekorasyon ürünüdür.</p>
                     <span class="read-more-btn" onclick="toggleReadMore(this)">devamını oku</span>
@@ -253,15 +317,47 @@
                         <h3>📸 Lazer İşleme – Manevi Değeri Yüksek</h3>
                         <p>Evine huzur katmak isteyenler için en çok tercih edilen dini dekor ürünlerinden biridir. Lazer işleme teknolojisi ile detaylar ağaca kalıcı olarak mühürlenir.</p>
                     </div>
+                </div> 
+                <div itemprop="offers" itemscope itemtype="https://schema.org/Offer">
+                    <meta itemprop="priceCurrency" content="TRY">
+                    <meta itemprop="price" content="550.00">
+                    <link itemprop="availability" href="https://schema.org/InStock">
+                    <link itemprop="url" href="https://www.shopier.com/bullarstasarim/44561052">
+                    <div itemprop="shippingDetails" itemscope itemtype="https://schema.org/OfferShippingDetails">
+                        <div itemprop="shippingRate" itemscope itemtype="https://schema.org/MonetaryAmount">
+                            <meta itemprop="value" content="0">
+                            <meta itemprop="currency" content="TRY">
+                        </div>
+                        <div itemprop="shippingDestination" itemscope itemtype="https://schema.org/DefinedRegion">
+                            <meta itemprop="addressCountry" content="TR">
+                        </div>
+                    </div>
+                    <div itemprop="hasMerchantReturnPolicy" itemscope itemtype="https://schema.org/MerchantReturnPolicy">
+                        <meta itemprop="applicableCountry" content="TR">
+                        <meta itemprop="returnPolicyCategory" content="https://schema.org/MerchantReturnPolicyFullRefund">
+                        <meta itemprop="merchantReturnDays" content="14">
+                        <meta itemprop="returnMethod" content="https://schema.org/ReturnByMail">
+                        <meta itemprop="returnFees" content="https://schema.org/FreeReturn">
+                    </div>
                 </div>
-                <a href="https://www.shopier.com/bullarstasarim/44561052" target="_blank" class="buy-button">HEMEN SİPARİŞ VER</a>
+                <div itemprop="aggregateRating" itemscope itemtype="https://schema.org/AggregateRating">
+                    <meta itemprop="ratingValue" content="5">
+                    <meta itemprop="reviewCount" content="41">
+                </div>
+                <a href="https://www.shopier.com/bullarstasarim/44561052" target="_blank" rel="noopener noreferrer" class="buy-button">HEMEN SİPARİŞ VER</a>
             </div>
         </div>
 
+
         <div class="product-card">
-            <div class="product-image"><img src="kisiye-ozel-cift-fotografli-lazer-kazima-ahsap-cerceve.jpg" alt="Bambu Çerçeve"></div>
-            <div class="product-info">
-                <h2 class="product-title">Kişiye Özel Çift Fotoğraflı Lazer İşleme Bambu Çerçeve – Ömürlük Anı Tasarımı</h2>
+            <div class="product-image">
+                <div class="image-carousel">
+                    <img src="kisiye-ozel-cift-fotografli-lazer-kazima-ahsap-cerceve.jpg" alt="Kişiye Özel Çift Fotoğraflı Lazer Kazıma Bambu Çerçeve" width="450" height="450" loading="lazy" decoding="async">
+                    <img src="kisiye-ozel-ahsap-lazer-kazima-fotografli-cerceve-hediye.jpg" alt="Lazer Kazıma Fotoğraflı Bambu Çerçeve" width="450" height="450" loading="lazy" decoding="async">
+                </div>
+            </div>
+            <div class="product-info" itemscope itemtype="https://schema.org/Product">
+                <h2 class="product-title" itemprop="name">Kişiye Özel Çift Fotoğraflı Lazer İşleme Bambu Çerçeve – Ömürlük Anı Tasarımı</h2>
                 <div class="description-box">
                     <p>Aynı çerçevede 2 farklı fotoğraf kullanabileceğin, doğallığın ve kalıcılığın en şık örneği. Bullars Tasarım atölyesinde, çevre dostu %100 doğal bambu üzerine en sevdiğiniz iki anıyı lazer teknolojisiyle işliyoruz.</p>
                     <span class="read-more-btn" onclick="toggleReadMore(this)">devamını oku</span>
@@ -274,15 +370,48 @@
                         <h3>📸 Lazer İşleme Kalitesi</h3>
                         <p>Fotoğraflarınız baskı değil, lazer işleme yöntemiyle ahşaba işlenir, asla silinmez.</p>
                     </div>
+                </div> 
+                <div itemprop="offers" itemscope itemtype="https://schema.org/Offer">
+                    <meta itemprop="priceCurrency" content="TRY">
+                    <meta itemprop="price" content="450.00">
+                    <link itemprop="availability" href="https://schema.org/InStock">
+                    <link itemprop="url" href="https://www.shopier.com/bullarstasarim/44693959">
+                    <div itemprop="shippingDetails" itemscope itemtype="https://schema.org/OfferShippingDetails">
+                        <div itemprop="shippingRate" itemscope itemtype="https://schema.org/MonetaryAmount">
+                            <meta itemprop="value" content="0">
+                            <meta itemprop="currency" content="TRY">
+                        </div>
+                        <div itemprop="shippingDestination" itemscope itemtype="https://schema.org/DefinedRegion">
+                            <meta itemprop="addressCountry" content="TR">
+                        </div>
+                    </div>
+                    <div itemprop="hasMerchantReturnPolicy" itemscope itemtype="https://schema.org/MerchantReturnPolicy">
+                        <meta itemprop="applicableCountry" content="TR">
+                        <meta itemprop="returnPolicyCategory" content="https://schema.org/MerchantReturnPolicyFullRefund">
+                        <meta itemprop="merchantReturnDays" content="14">
+                        <meta itemprop="returnMethod" content="https://schema.org/ReturnByMail">
+                        <meta itemprop="returnFees" content="https://schema.org/FreeReturn">
+                    </div>
                 </div>
-                <a href="https://www.shopier.com/bullarstasarim/44693959" target="_blank" class="buy-button">FOTOĞRAFINI GÖNDER</a>
+                <div itemprop="aggregateRating" itemscope itemtype="https://schema.org/AggregateRating">
+                    <meta itemprop="ratingValue" content="4.9">
+                    <meta itemprop="reviewCount" content="28">
+                </div>
+                <a href="https://www.shopier.com/bullarstasarim/44693959" target="_blank" rel="noopener noreferrer" class="buy-button">FOTOĞRAFINI GÖNDER</a>
             </div>
         </div>
 
+
         <div class="product-card">
-            <div class="product-image"><img src="kisiye-ozel-lazer-kazima-ahsap-bardak-altligi.jpg" alt="Bardak Altlığı"></div>
-            <div class="product-info">
-                <h2 class="product-title">Kişiye Özel Ahşap Bardak Altlığı – Lazer İşleme İsim, Fotoğraf & Karakter Baskı (Çift Taraflı)</h2>
+            <div class="product-image">
+                <div class="image-carousel">
+                    <img src="kisiye-ozel-lazer-kazima-ahsap-bardak-altligi.jpg" alt="Kişiye Özel Lazer Kazıma Ahşap Bardak Altlığı" width="450" height="450" loading="lazy" decoding="async">
+                    <img src="logo-islemeli-ahsap-bardak-altligi-kisiye-ozel-takim-logosu.jpg" alt="Logo işlemeli ahşap bardak altlığı" width="450" height="450" loading="lazy" decoding="async">
+                    <img src="ahsap-bardak-altligi-kisiye-ozel-tasarim.jpg" alt="Kişiye özel ahşap bardak altlığı" width="450" height="450" loading="lazy" decoding="async">
+                </div>
+            </div>
+            <div class="product-info" itemscope itemtype="https://schema.org/Product">
+                <h2 class="product-title" itemprop="name">Kişiye Özel Ahşap Bardak Altlığı – Lazer İşleme İsim, Fotoğraf & Karakter Baskı (Çift Taraflı)</h2>
                 <div class="description-box">
                     <p>Sıradan bardak altlıklarını unut. Kişiye özel hazırlanan bu ahşap bardak altlığı, üzerine isim, fotoğraf veya karakter işlenerek tamamen sana özel bir tasarıma dönüşür.</p>
                     <span class="read-more-btn" onclick="toggleReadMore(this)">devamını oku</span>
@@ -293,15 +422,48 @@
                             <li>✔ Çift taraflı işleme imkanı</li>
                         </ul>
                     </div>
+                </div> 
+                <div itemprop="offers" itemscope itemtype="https://schema.org/Offer">
+                    <meta itemprop="priceCurrency" content="TRY">
+                    <meta itemprop="price" content="150.00">
+                    <link itemprop="availability" href="https://schema.org/InStock">
+                    <link itemprop="url" href="https://www.shopier.com/bullarstasarim/44832892">
+                    <div itemprop="shippingDetails" itemscope itemtype="https://schema.org/OfferShippingDetails">
+                        <div itemprop="shippingRate" itemscope itemtype="https://schema.org/MonetaryAmount">
+                            <meta itemprop="value" content="0">
+                            <meta itemprop="currency" content="TRY">
+                        </div>
+                        <div itemprop="shippingDestination" itemscope itemtype="https://schema.org/DefinedRegion">
+                            <meta itemprop="addressCountry" content="TR">
+                        </div>
+                    </div>
+                    <div itemprop="hasMerchantReturnPolicy" itemscope itemtype="https://schema.org/MerchantReturnPolicy">
+                        <meta itemprop="applicableCountry" content="TR">
+                        <meta itemprop="returnPolicyCategory" content="https://schema.org/MerchantReturnPolicyFullRefund">
+                        <meta itemprop="merchantReturnDays" content="14">
+                        <meta itemprop="returnMethod" content="https://schema.org/ReturnByMail">
+                        <meta itemprop="returnFees" content="https://schema.org/FreeReturn">
+                    </div>
                 </div>
-                <a href="https://www.shopier.com/bullarstasarim/44832892" target="_blank" class="buy-button">ŞİMDİ TASARLA VE AL</a>
+                <div itemprop="aggregateRating" itemscope itemtype="https://schema.org/AggregateRating">
+                    <meta itemprop="ratingValue" content="5">
+                    <meta itemprop="reviewCount" content="34">
+                </div>
+                <a href="https://www.shopier.com/bullarstasarim/44832892" target="_blank" rel="noopener noreferrer" class="buy-button">ŞİMDİ TASARLA VE AL</a>
             </div>
         </div>
 
+
         <div class="product-card">
-            <div class="product-image"><img src="dogal-agac-kutuk-tablo-kisiye-ozel-hediye.jpg" alt="Kütük Tablo"></div>
-            <div class="product-info">
-                <h2 class="product-title">Kişiye Özel Lazer İşleme Doğal Ahşap Kütük Tablo</h2>
+            <div class="product-image">
+                <div class="image-carousel">
+                    <img src="dogal-agac-kutuk-tablo-kisiye-ozel-hediye.jpg" alt="Kişiye Özel Lazer İşleme Doğal Ahşap Kütük Tablo" width="450" height="450" loading="lazy" decoding="async">
+                    <img src="kisiye-ozel-ahsap-kutuk-tablo-fotograftan-lazer-kazima-portre.jpg" alt="Ahşap kütük tablo lazer kazıma" width="450" height="450" loading="lazy" decoding="async">
+                    <img src="ahsap-kutuk-uzerine-lazer-kazima-kadin-portre-dekoratif-tablo.jpg" alt="Dekoratif ahşap tablo" width="450" height="450" loading="lazy" decoding="async">
+                </div>
+            </div>
+            <div class="product-info" itemscope itemtype="https://schema.org/Product">
+                <h2 class="product-title" itemprop="name">Kişiye Özel Lazer İşleme Doğal Ahşap Kütük Tablo</h2>
                 <div class="description-box">
                     <p>En değerli anılarınızı sıradan çerçevelerden çıkarın, doğanın en saf haliyle ölümsüzleştirin. Fotoğrafınızı lazer teknolojisi ile ağacın üzerine işleyerek silinmeyen bir hatıraya dönüştürür.</p>
                     <span class="read-more-btn" onclick="toggleReadMore(this)">devamını oku</span>
@@ -310,12 +472,120 @@
                         <p>Lazer işleme tekniği ile fotoğrafınız ahşap dokusuyla bütünleşir.</p>
                     </div>
                 </div>
-                <a href="https://www.shopier.com/bullarstasarim/44800593" target="_blank" class="buy-button">HEMEN TASARLA VE SATIN AL</a>
+                <div itemprop="offers" itemscope itemtype="https://schema.org/Offer">
+                    <meta itemprop="priceCurrency" content="TRY">
+                    <meta itemprop="price" content="550.00">
+                    <link itemprop="availability" href="https://schema.org/InStock">
+                    <link itemprop="url" href="https://www.shopier.com/bullarstasarim/44800593">
+                    <div itemprop="shippingDetails" itemscope itemtype="https://schema.org/OfferShippingDetails">
+                        <div itemprop="shippingRate" itemscope itemtype="https://schema.org/MonetaryAmount">
+                            <meta itemprop="value" content="0">
+                            <meta itemprop="currency" content="TRY">
+                        </div>
+                        <div itemprop="shippingDestination" itemscope itemtype="https://schema.org/DefinedRegion">
+                            <meta itemprop="addressCountry" content="TR">
+                        </div>
+                    </div>
+                    <div itemprop="hasMerchantReturnPolicy" itemscope itemtype="https://schema.org/MerchantReturnPolicy">
+                        <meta itemprop="applicableCountry" content="TR">
+                        <meta itemprop="returnPolicyCategory" content="https://schema.org/MerchantReturnPolicyFullRefund">
+                        <meta itemprop="merchantReturnDays" content="14">
+                        <meta itemprop="returnMethod" content="https://schema.org/ReturnByMail">
+                        <meta itemprop="returnFees" content="https://schema.org/FreeReturn">
+                    </div>
+                </div>
+                <div itemprop="aggregateRating" itemscope itemtype="https://schema.org/AggregateRating">
+                    <meta itemprop="ratingValue" content="5">
+                    <meta itemprop="reviewCount" content="52">
+                </div>
+                <a href="https://www.shopier.com/bullarstasarim/44800593" target="_blank" rel="noopener noreferrer" class="buy-button">HEMEN TASARLA VE SATIN AL</a>
             </div>
         </div>
+
+        <!-- YENİ ÜRÜN: Kişiye Özel Fotoğraf Lazer Kazıma Ahşap Tablo -->
+        <div class="product-card">
+            <div class="product-image">
+                <div class="image-carousel">
+                    <img src="kisiye-ozel-tasarim-fotograf-lazer-kazima-ahsap-tablo.jpg" alt="Kişiye Özel Tasarım Fotoğraf Lazer Kazıma Ahşap Tablo" width="450" height="280" loading="lazy" decoding="async">
+                    <img src="fotograf-baski-ahsap-masaustu-dekor-lazer-isleme.jpg" alt="Fotoğraf Baskı Ahşap Masaüstü Dekor Lazer İşleme" width="450" height="280" loading="lazy" decoding="async">
+                    <img src="kisiye-ozel-hediyelik-fotograf-ahsap-tablo-ofis-dekorasyon.jpg" alt="Kişiye Özel Hediyelik Fotoğraf Ahşap Tablo Ofis Dekorasyon" width="450" height="280" loading="lazy" decoding="async">
+                </div>
+            </div>
+            <div class="product-info" itemscope itemtype="https://schema.org/Product">
+                <h2 class="product-title">Kişiye Özel Fotoğraf Lazer Kazıma Ahşap Tablo – Ev & Masaüstü Dekor</h2>
+                <div class="description-box">
+                    <p>Evinize karakter katan, silinmeyen lazer kazıma teknolojisi ile hazırlanan fotoğraflı ahşap tablo. En özel anılarınız her zaman yanınızda.</p>
+                    <span class="read-more-btn" onclick="toggleReadMore(this)">devamını oku</span>
+                    <div class="hidden-content">
+                        <h3>🎯 EV KULLANIMI</h3>
+                        <ul>
+                            <li>Masaüstü dekorasyon</li>
+                            <li>Kişisel anı köşesi</li>
+                        </ul>
+                        <p>Minimal ve doğal görünümü sayesinde her türlü mobilyaya uyum sağlar. 300 TL özel fiyatıyla.</p>
+                    </div> 
+                </div> 
+                <div itemprop="offers" itemscope itemtype="https://schema.org/Offer">
+                    <meta itemprop="priceCurrency" content="TRY">
+                    <meta itemprop="price" content="300.00">
+                    <link itemprop="availability" href="https://schema.org/InStock">
+                    <link itemprop="url" href="https://www.shopier.com/bullarstasarim/46058978">
+                    <div itemprop="shippingDetails" itemscope itemtype="https://schema.org/OfferShippingDetails">
+                        <div itemprop="shippingRate" itemscope itemtype="https://schema.org/MonetaryAmount">
+                            <meta itemprop="value" content="0">
+                            <meta itemprop="currency" content="TRY">
+                        </div>
+                        <div itemprop="shippingDestination" itemscope itemtype="https://schema.org/DefinedRegion">
+                            <meta itemprop="addressCountry" content="TR">
+                        </div>
+                    </div>
+                    <div itemprop="hasMerchantReturnPolicy" itemscope itemtype="https://schema.org/MerchantReturnPolicy">
+                        <meta itemprop="applicableCountry" content="TR">
+                        <meta itemprop="returnPolicyCategory" content="https://schema.org/MerchantReturnPolicyFullRefund">
+                        <meta itemprop="merchantReturnDays" content="14">
+                        <meta itemprop="returnMethod" content="https://schema.org/ReturnByMail">
+                        <meta itemprop="returnFees" content="https://schema.org/FreeReturn">
+                    </div>
+                </div>
+                <div itemprop="aggregateRating" itemscope itemtype="https://schema.org/AggregateRating">
+                    <meta itemprop="ratingValue" content="5">
+                    <meta itemprop="reviewCount" content="24">
+                </div>
+                <a href="https://www.shopier.com/bullarstasarim/46058978" target="_blank" rel="noopener noreferrer" class="buy-button">HEMEN SATIN AL</a>
+            </div>
+        </div>
+
+        <!-- ÜRÜN: Ahşap Tabela -->
+        <div class="product-card">
+            <div class="product-image">
+                <div class="image-carousel">
+                    <img src="kisiye-ozel-isim-yazili-ahsap-tabela-villa-isim-tabelasi.jpg" alt="Villa Giriş Tabelası Ahşap Özel Tasarım" width="450" height="280" loading="lazy">
+                    <img src="villa-giris-tabelasi-ahsap-ozel-tasarim.jpg" alt="Ahşap Villa Tabelası" width="450" height="280" loading="lazy">
+                </div>
+            </div>
+            <div class="product-info">
+                <span class="category-badge">Ev Dekorasyon · Villa & Bahçe</span>
+                <h2 class="product-title">Kişiye Özel Villa Giriş Tabelası – Lazer Kazıma Dış Mekan Ahşap Tabela</h2>
+                <div class="description-box">
+                    <p>Evinize veya villanıza karakter kazandıran, tamamen size özel üretilen dış mekan ahşap tabela. Bahçe duvarları ve kapı girişleri için estetik bir kimlik oluşturur.</p>
+                    <span class="read-more-btn" onclick="toggleReadMore(this)">devamını oku</span>
+                    <div class="hidden-content">
+                        <h3>🎯 KULLANIM ALANLARI</h3>
+                        <ul>
+                            <li>✔ Villa ve müstakil ev girişleri</li>
+                            <li>✔ Bahçe duvarı ve kapı önü dekoru</li>
+                            <li>✔ Apartman ve site isim tabelaları</li>
+                        </ul>
+                        <p>Dış ortama dayanıklı yapısı ile yıllarca kalitesini korur.</p>
+                    </div>
+                </div>
+                <a href="https://www.shopier.com/bullarstasarim/46195332" target="_blank" class="buy-button">HEMEN TASARLA VE SATIN AL</a>
+            </div>
+        </div>
+
     </div>
 
-    <a href="https://wa.me/905462171834" target="_blank" class="wa-fixed"><i class="fab fa-whatsapp"></i></a>
+    <a href="https://wa.me/905462171834" target="_blank" rel="noopener noreferrer" class="wa-fixed"><i class="fab fa-whatsapp"></i></a>
 
     <footer class="footer-notice">
         <div class="footer-top-text">
@@ -354,6 +624,58 @@
                 btn.innerText = "küçült"; 
             } 
         }
+
+        function setupCarouselControls() {
+            document.querySelectorAll('.product-image').forEach((container) => {
+                const carousel = container.querySelector('.image-carousel');
+                if (!carousel) return;
+                container.style.position = 'relative';
+                const controls = document.createElement('div');
+                controls.className = 'carousel-controls';
+                const leftBtn = document.createElement('button');
+                leftBtn.className = 'carousel-btn disabled';
+                leftBtn.innerHTML = '<span class="carousel-btn__inner">‹</span>';
+                const rightBtn = document.createElement('button');
+                rightBtn.className = 'carousel-btn';
+                rightBtn.innerHTML = '<span class="carousel-btn__inner">›</span>';
+                controls.appendChild(leftBtn);
+                controls.appendChild(rightBtn);
+                container.appendChild(controls);
+                function updateButtons() {
+                    if (carousel.scrollLeft <= 5) {
+                        leftBtn.classList.add('disabled');
+                    } else {
+                        leftBtn.classList.remove('disabled');
+                    }
+                    if (carousel.scrollLeft + carousel.clientWidth >= carousel.scrollWidth - 5) {
+                        rightBtn.classList.add('disabled');
+                    } else {
+                        rightBtn.classList.remove('disabled');
+                    }
+                }
+                leftBtn.addEventListener('click', () => {
+                    carousel.scrollBy({ left: -carousel.clientWidth, behavior: 'smooth' });
+                });
+                rightBtn.addEventListener('click', () => {
+                    carousel.scrollBy({ left: carousel.clientWidth, behavior: 'smooth' });
+                });
+                let scrollTimeout;
+                carousel.addEventListener('scroll', () => {
+                    window.requestAnimationFrame(updateButtons);
+                    window.clearTimeout(scrollTimeout);
+                    scrollTimeout = window.setTimeout(() => {
+                        const slideIndex = Math.round(carousel.scrollLeft / carousel.clientWidth);
+                        const targetLeft = slideIndex * carousel.clientWidth;
+                        carousel.scrollTo({ left: targetLeft, behavior: 'smooth' });
+                    }, 120);
+                });
+                updateButtons();
+            });
+        }
+
+        document.addEventListener('DOMContentLoaded', () => {
+            setupCarouselControls();
+        });
     </script>
 </body>
 </html>

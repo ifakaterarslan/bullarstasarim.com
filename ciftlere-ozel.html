@@ -3,6 +3,9 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="google-site-verification" content="GSC_DOGRULAMA_KODUNUZ" />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <title>Çiftlere Özel | Lazer Kazıma Ahşap Hediyeler - Bullars Tasarım</title>
     <meta name="description" content="Çiftlere özel lazer kazımalı ahşap hediye ürünleri. İsimli kütük tablo, Spotify plaket, çift fotoğraflı çerçeve. El yapımı, doğal ahşap, ömürlük kalıcılık. Yıldönümü, evlilik hediyeleri, düğün ve nişan.">
     <meta name="keywords" content="çiftlere özel, yıldönümü hediyesi, evlilik hediyeleri, lazer kazıma, spotify plaket, çift hediye, isimli hediye, doğal ahşap, çerçeve, kütük tablo, düğün hediyesi, nişan hediyesi">
@@ -91,8 +94,68 @@
         /* KATALOG */
         .catalog-container { max-width: 1200px; margin: 60px auto; padding: 0 20px; padding-bottom: 100px; }
         .product-card { display: flex; gap: 50px; background: #fff; margin-bottom: 60px; padding: 40px; border-radius: 20px; box-shadow: 0 15px 40px rgba(0,0,0,0.06); align-items: flex-start; }
-        .product-image { flex: 1; text-align: center; position: sticky; top: 180px; }
-        .product-image img { width: 100%; max-width: 450px; border-radius: 12px; }
+        .product-image { 
+            flex: 1; 
+            text-align: center; 
+            position: relative;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            min-height: 260px;
+            overflow: hidden;
+            max-height: 340px;
+            width: 100%;
+        }
+        .image-carousel {
+            display: flex;
+            flex-wrap: nowrap;
+            overflow-x: auto;
+            overflow-y: hidden;
+            scroll-snap-type: x mandatory;
+            scroll-behavior: smooth;
+            gap: 0;
+            padding: 0;
+            margin: 0;
+            -webkit-overflow-scrolling: touch;
+            width: 100%;
+            max-width: 100%;
+            height: 280px;
+            max-height: 280px;
+            min-height: 280px;
+            position: relative;
+            border-radius: 12px;
+        }
+        .image-carousel img {
+            flex: 0 0 100%;
+            min-width: 100%;
+            max-width: 100%;
+            width: 100%;
+            height: 280px;
+            max-height: 280px;
+            object-fit: contain;
+            background-color: #f8f5f2;
+            scroll-snap-align: start;
+            scroll-snap-stop: always;
+            margin: 0;
+            padding: 0;
+            display: block;
+        }
+        .image-carousel::-webkit-scrollbar { width: 0; height: 0; }
+        .image-carousel {-ms-overflow-style: none; scrollbar-width: none; }
+        .carousel-controls {
+            position: absolute; top: 50%; right: 0; left: 0; transform: translateY(-50%);
+            display: flex; justify-content: space-between; align-items: center;
+            pointer-events: none;
+        }
+        .carousel-btn {
+            width: 35px; height: 35px; border: 1px solid rgba(61,43,31,0.5);
+            background: rgba(255,255,255,0.85); border-radius: 50%;
+            display: flex; align-items: center; justify-content: center;
+            pointer-events: all; cursor: pointer; transition: 0.2s;
+            color: #3d2b1f; font-size: 14px; font-weight: 700;
+        }
+        .carousel-btn:hover { background: #8B5E3C; color: #fff; }
+        .carousel-btn.disabled { opacity: .35; pointer-events: none; }
         .product-info { flex: 1.5; }
         .product-title { font-family: 'Playfair Display', serif; font-size: 26px; margin-bottom: 20px; color: #222; border-left: none; padding-left: 0; line-height: 1.2; }
         .description-box p { font-size: 15px; line-height: 1.8; color: #444; margin-bottom: 15px; text-align: justify; white-space: pre-line; }
@@ -104,9 +167,12 @@
         .buy-button { display: inline-block; width: 100%; text-align: center; padding: 22px; background-color: #8B5E3C; color: #fff; text-decoration: none; font-weight: 700; border-radius: 12px; font-size: 18px; transition: 0.3s; margin-top: 20px; }
         .buy-button:hover { background-color: #333; transform: translateY(-3px); }
 
-        .wa-fixed { position: fixed; bottom: 85px; right: 30px; background-color: #25D366; color: white; width: 60px; height: 60px; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 30px; text-decoration: none; box-shadow: 0 4px 15px rgba(0,0,0,0.2); z-index: 2000; transition: 0.3s; }
-        .wa-fixed:hover { transform: scale(1.1); }
-        .footer-text { text-align: center; padding: 40px 20px; font-size: 14px; color: #555; border-top: 1px solid #ddd; margin-top: 50px; line-height: 1.6; }
+        .wa-fixed { position: fixed; bottom: 30px; right: 30px; background-color: #25D366; color: white; width: 60px; height: 60px; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 30px; text-decoration: none; box-shadow: 0 4px 15px rgba(0,0,0,0.2); z-index: 9999; transition: 0.3s; }
+        .wa-fixed:hover { transform: scale(1.25); box-shadow: 0 8px 25px rgba(37,211,102,0.5); }
+        .footer-notice { width: 100%; background: #3d2b1f; color: #fff; text-align: center; padding: 15px 10px; margin-top: 50px; display: flex; flex-direction: column; gap: 3px; font-family: 'Playfair Display', serif; }
+        .footer-notice .footer-top-text a { color: #efb97d; text-decoration: none; font-weight: 700; }
+        .footer-notice .footer-copyright { font-size: 10px; color: rgba(255,255,255,0.8); line-height: 1.4; }
+        .footer-notice .footer-credits { font-size: 9.5px; color: #fff; }
 
         @media (max-width: 1024px) {
             .wood-header { height: 60px; padding: 5px; }
@@ -141,8 +207,11 @@
             .search-slide.active { width: 200px; padding: 0 15px; }
             .catalog-container { margin: 20px auto; padding: 0 15px; }
             .product-card { padding: 20px; gap: 20px; }
+            .product-image { min-height: auto; max-height: 260px; }
+            .image-carousel { max-height: 210px; height: 210px; min-height: 210px; }
+            .image-carousel img { height: 210px; max-height: 210px; }
+            .wa-fixed { bottom: 20px; right: 20px; width: 50px; height: 50px; font-size: 25px; }
         }
-
     </style>
 </head>
 <body onclick="closeAll(event)">
@@ -167,7 +236,7 @@
             <div class="tool-btn" onclick="toggleSearch()"><i class="fas fa-search"></i></div>
             <div class="search-slide" id="searchBar">
                 <i class="fas fa-search" style="color:#8B5E3C; margin-right: 5px;"></i>
-                <input type="text" placeholder="Ürün ara...">
+                <input id="searchInput" type="text" placeholder="Ürün ara...">
             </div>
         </div>
     </header>
@@ -188,10 +257,14 @@
     </nav>
 
     <div class="catalog-container">
+        <h1 style="font-family: 'Playfair Display', serif; font-size: 32px; color: #3d2b1f; margin-bottom: 20px; text-align: center; border-bottom: 3px solid #8B5E3C; padding-bottom: 20px; margin-bottom: 30px;">Çiftlere Özel Lazer Kazıma Ahşap Hediyeler</h1>
         
         <div class="product-card">
             <div class="product-image">
-                <img src="kisiye-ozel-isimli-tarihli-ahsap-kutuk-dekor.jpg" alt="Kişiye Özel İsimli Ahşap Kütük Dekor">
+                <div class="image-carousel">
+                    <img src="kisiye-ozel-isimli-tarihli-ahsap-kutuk-dekor.jpg" alt="Kişiye Özel İsimli ve Tarihli Ahşap Kütük Dekor - Çift Hediyesi" width="450" height="280" fetchpriority="high" decoding="async" itemprop="image">
+                    <img src="dogal-agac-kutuk-tablo-kisiye-ozel-hediye.jpg" alt="Kişiye özel isimli kütük dekor" width="450" height="280" loading="lazy" decoding="async">
+                </div>
             </div>
             <div class="product-info">
                 <h2 class="product-title">Kişiye Özel İsimli Ahşap Kütük Dekor – Tarihli Çift Tasarım (Ömürlük Hatıra)</h2>
@@ -202,7 +275,7 @@
                     Bu özel tasarım, o anı doğal ahşabın içinde saklar.
                     Her baktığında sadece bir ürün görmezsin; bir hikaye, bir başlangıç, bir anı görürsün.</p>
                     <span class="read-more-btn" onclick="toggleReadMore(this)">devamını oku</span>
-                    <div class="hidden-content">
+                    <div class="hidden-content" itemprop="description">
                         <h3>🌳 %100 Doğal Ağaç Kütüğü – Her Ürün Eşsiz</h3>
                         <p>Bu ürün gerçek ağaç kütüğünden üretilir. Doğanın kendisi gibi, her biri farklıdır.</p>
                         <ul>
@@ -243,7 +316,7 @@
                             <li>Ev & ofis dekorasyonu</li>
                         </ul>
                         <h3>📦 Ürün Özellikleri</h3>
-                        <ul>
+                        <ul> 
                             <li>✔ Malzeme: Doğal ağaç kütüğü</li>
                             <li>✔ Üretim: Lazer işleme</li>
                             <li>✔ Kişiye özel isim & tarih</li>
@@ -259,15 +332,44 @@
                         </ul>
                     </div>
                 </div>
-                <a href="https://www.shopier.com/bullarstasarim" target="_blank" class="buy-button">HEMEN TASARLA VE AL</a>
-            </div>
+                <div itemprop="offers" itemscope itemtype="https://schema.org/Offer">
+                    <meta itemprop="priceCurrency" content="TRY">
+                    <meta itemprop="price" content="500.00">
+                    <meta itemprop="availability" content="https://schema.org/InStock">
+                    <link itemprop="url" href="https://www.shopier.com/bullarstasarim/44664990?app_id=13">
+                    <div itemprop="shippingDetails" itemscope itemtype="https://schema.org/OfferShippingDetails">
+                        <div itemprop="shippingRate" itemscope itemtype="https://schema.org/MonetaryAmount">
+                            <meta itemprop="value" content="0">
+                            <meta itemprop="currency" content="TRY">
+                        </div>
+                        <div itemprop="shippingDestination" itemscope itemtype="https://schema.org/DefinedRegion">
+                            <meta itemprop="addressCountry" content="TR">
+                        </div>
+                    </div>
+                    <div itemprop="hasMerchantReturnPolicy" itemscope itemtype="https://schema.org/MerchantReturnPolicy">
+                        <meta itemprop="applicableCountry" content="TR">
+                        <meta itemprop="returnPolicyCategory" content="https://schema.org/MerchantReturnPolicyFullRefund">
+                        <meta itemprop="merchantReturnDays" content="14">
+                        <meta itemprop="returnMethod" content="https://schema.org/ReturnByMail">
+                        <meta itemprop="returnFees" content="https://schema.org/FreeReturn">
+                    </div>
+                </div>
+                <div itemprop="aggregateRating" itemscope itemtype="https://schema.org/AggregateRating">
+                    <meta itemprop="ratingValue" content="5">
+                    <meta itemprop="reviewCount" content="19">
+                </div>
+                <a href="https://www.shopier.com/bullarstasarim/44664990?app_id=13" target="_blank" rel="noopener noreferrer" class="buy-button">HEMEN TASARLA VE AL</a>
+            </div> 
         </div>
 
         <div class="product-card">
-            <div class="product-image">
-                <img src="kisiye-ozel-spotify-kodlu-fotoğrafli-ahsap-plaket.jpg" alt="Spotify Kodlu Ahşap Çift Plaketi">
-            </div>
-            <div class="product-info">
+            <div class="product-image"> 
+                <div class="image-carousel">
+                    <img src="kisiye-ozel-spotify-kodlu-fotoğrafli-ahsap-plaket.jpg" alt="Kişiye Özel Spotify Kodlu Fotoğraflı Ahşap Plaket" width="450" height="280" loading="lazy" decoding="async" itemprop="image">
+                    <img src="kisiye-ozel-spotify-ahsap-plak-fotografli-sarki-hediyesi.jpg" alt="Kişiye özel spotify şarkı plak" width="450" height="280" loading="lazy" decoding="async">
+                </div>
+            </div> 
+            <div class="product-info" itemscope itemtype="https://schema.org/Product"> 
                 <h2 class="product-title">Kişiye Özel Spotify Kodlu Ahşap Çift Plaketi – Fotoğraflı & İsimli Hediye</h2>
                 <div class="description-box">
                     <p>Kişiye özel hazırlanan bu Spotify kodlu ahşap çift plaketi, sizin için anlam taşıyan şarkıyı, fotoğrafınızı ve isimlerinizi tek bir tasarımda birleştirir.
@@ -275,7 +377,7 @@
                     Bu ürün sadece bir dekor değil, yaşanan bir duygunun fiziksel hali.</p>
                     <span class="read-more-btn" onclick="toggleReadMore(this)">devamını oku</span>
                     <div class="hidden-content">
-                        <h3>🎵 Spotify Kod Özelliği – Anını Tek Dokunuşla Yaşa</h3>
+                        <h3>🎵 Spotify Kod Özelliği – Anını Tek Dokunuşla Yaşa</h3> 
                         <ul>
                             <li>✔ Seçtiğin şarkı direkt açılır</li>
                             <li>✔ Anılar müzikle birleşir</li>
@@ -300,20 +402,50 @@
                             <li>✔ Üretim: Lazer işleme</li>
                             <li>✔ Spotify kod entegrasyonu</li>
                             <li>✔ Fotoğraf + isim + şarkı ekleme</li>
-                        </ul>
+                        </ul> 
                     </div>
                 </div>
-                <a href="https://www.shopier.com/bullarstasarim" target="_blank" class="buy-button">HEMEN ŞARKINI SEÇ</a>
+                <div itemprop="offers" itemscope itemtype="https://schema.org/Offer">
+                    <meta itemprop="priceCurrency" content="TRY">
+                    <meta itemprop="price" content="450.00">
+                    <link itemprop="availability" href="https://schema.org/InStock">
+                    <link itemprop="url" href="https://www.shopier.com/bullarstasarim/44589557">
+                    <div itemprop="shippingDetails" itemscope itemtype="https://schema.org/OfferShippingDetails">
+                        <div itemprop="shippingRate" itemscope itemtype="https://schema.org/MonetaryAmount">
+                            <meta itemprop="value" content="0">
+                            <meta itemprop="currency" content="TRY">
+                        </div>
+                        <div itemprop="shippingDestination" itemscope itemtype="https://schema.org/DefinedRegion">
+                            <meta itemprop="addressCountry" content="TR">
+                        </div>
+                    </div>
+                    <div itemprop="hasMerchantReturnPolicy" itemscope itemtype="https://schema.org/MerchantReturnPolicy">
+                        <meta itemprop="applicableCountry" content="TR">
+                        <meta itemprop="returnPolicyCategory" content="https://schema.org/MerchantReturnPolicyFullRefund">
+                        <meta itemprop="merchantReturnDays" content="14">
+                        <meta itemprop="returnMethod" content="https://schema.org/ReturnByMail">
+                        <meta itemprop="returnFees" content="https://schema.org/FreeReturn">
+                    </div>
+                </div>
+                <div itemprop="aggregateRating" itemscope itemtype="https://schema.org/AggregateRating">
+                    <meta itemprop="ratingValue" content="5">
+                    <meta itemprop="reviewCount" content="65">
+                </div>
+                <a href="https://www.shopier.com/bullarstasarim/44589557" target="_blank" rel="noopener noreferrer" class="buy-button">HEMEN ŞARKINI SEÇ</a>
             </div>
         </div>
 
         <div class="product-card">
             <div class="product-image">
-                <img src="kisiye-ozel-cift-fotografli-lazer-kazima-ahsap-cerceve.jpg" alt="Bambu Çerçeve">
-            </div>
-            <div class="product-info">
+                <div class="image-carousel">
+                    <img src="kisiye-ozel-cift-fotografli-lazer-kazima-ahsap-cerceve.jpg" alt="Kişiye Özel Çift Fotoğraflı Lazer Kazıma Bambu Çerçeve" width="450" height="280" loading="lazy" decoding="async" itemprop="image">
+                    <img src="kisiye-ozel-ahsap-lazer-kazima-fotografli-cerceve-hediye.jpg" alt="Lazer kazıma bambu çerçeve" width="450" height="280" loading="lazy" decoding="async">
+                </div>
+            </div> 
+            <div class="product-info" itemscope itemtype="https://schema.org/Product"> 
                 <h2 class="product-title">Kişiye Özel Çift Fotoğraflı Lazer İşleme Bambu Çerçeve – Ömürlük Anı Tasarımı</h2>
                 <div class="description-box">
+                    <meta itemprop="description" content="Aynı çerçevede 2 farklı fotoğraf kullanabileceğin, doğallığın ve kalıcılığın en şık örneği. Bullars Tasarım atölyesinde, çevre dostu %100 doğal bambu üzerine en sevdiğiniz iki anıyı lazer teknolojisiyle işliyoruz. Minimal ve estetik yapısı, hafifliği ve çevre dostu malzemesiyle hem modern hem de doğal dekorasyonlara kusursuz uyum sağlar. Hem anlamı hem de şıklığı bir arada sunan bu ürün, duygusu yüksek ve kalıcı bir hediye arayanlar için mükemmel seçimdir.">
                     <p>Aynı çerçevede 2 farklı fotoğraf kullanabileceğin, doğallığın ve kalıcılığın en şık örneği. Bullars Tasarım atölyesinde, çevre dostu %100 doğal bambu üzerine en sevdiğiniz iki anıyı lazer teknolojisiyle işliyoruz. Minimal ve estetik yapısı, hafifliği ve çevre dostu malzemesiyle hem modern hem de doğal dekorasyonlara kusursuz uyum sağlar.
                     Hem anlamı hem de şıklığı bir arada sunan bu ürün, duygusu yüksek ve kalıcı bir hediye arayanlar için mükemmel seçimdir.</p>
                     <span class="read-more-btn" onclick="toggleReadMore(this)">devamını oku</span>
@@ -342,10 +474,36 @@
                             <li>✔ Üretim: Lazer işleme</li>
                             <li>✔ Çift fotoğraf alanı</li>
                             <li>✔ Stand: Dahil</li>
-                        </ul>
+                        </ul> 
                     </div>
                 </div>
-                <a href="https://www.shopier.com/bullarstasarim" target="_blank" class="buy-button">FOTOĞRAFINI GÖNDER</a>
+                <div itemprop="offers" itemscope itemtype="https://schema.org/Offer">
+                    <meta itemprop="priceCurrency" content="TRY">
+                    <meta itemprop="price" content="450.00">
+                    <link itemprop="availability" href="https://schema.org/InStock">
+                    <link itemprop="url" href="https://www.shopier.com/bullarstasarim/44693959">
+                    <div itemprop="shippingDetails" itemscope itemtype="https://schema.org/OfferShippingDetails">
+                        <div itemprop="shippingRate" itemscope itemtype="https://schema.org/MonetaryAmount">
+                            <meta itemprop="value" content="0">
+                            <meta itemprop="currency" content="TRY">
+                        </div>
+                        <div itemprop="shippingDestination" itemscope itemtype="https://schema.org/DefinedRegion">
+                            <meta itemprop="addressCountry" content="TR">
+                        </div>
+                    </div>
+                    <div itemprop="hasMerchantReturnPolicy" itemscope itemtype="https://schema.org/MerchantReturnPolicy">
+                        <meta itemprop="applicableCountry" content="TR">
+                        <meta itemprop="returnPolicyCategory" content="https://schema.org/MerchantReturnPolicyFullRefund">
+                        <meta itemprop="merchantReturnDays" content="14">
+                        <meta itemprop="returnMethod" content="https://schema.org/ReturnByMail">
+                        <meta itemprop="returnFees" content="https://schema.org/FreeReturn">
+                    </div>
+                </div>
+                <div itemprop="aggregateRating" itemscope itemtype="https://schema.org/AggregateRating">
+                    <meta itemprop="ratingValue" content="4.9">
+                    <meta itemprop="reviewCount" content="28">
+                </div>
+                <a href="https://www.shopier.com/bullarstasarim/44693959" target="_blank" rel="noopener noreferrer" class="buy-button">FOTOĞRAFINI GÖNDER</a>
             </div>
         </div>
 
@@ -353,15 +511,15 @@
 
     <a href="https://wa.me/905462171834" target="_blank" class="wa-fixed"><i class="fab fa-whatsapp"></i></a>
 
-    <footer class="footer-notice" itemscope itemtype="https://schema.org/WPFooter">
+    <footer class="footer-notice">
         <div class="footer-top-text">
-            Güvenli Ödeme Ve Teslimat İçin <a href="https://www.shopier.com/bullarstasarim" target="_blank" itemprop="url">''Shopier''</a> Mağazamızdan Sipariş Oluşturabilirsiniz
+            Güvenli Ödeme Ve Teslimat İçin <a href="https://www.shopier.com/bullarstasarim" target="_blank">''Shopier''</a> Mağazamızdan Sipariş Oluşturabilirsiniz
         </div>
         <div class="footer-copyright">
-            <span itemprop="copyrightYear">2026</span> © <span itemprop="copyrightHolder">BULLARS TASARIM</span> - bullarstasarim.com | Tüm hakları saklıdır, Sitedeki görseller ve yazılar izinsiz kullanılamaz.
+            BULLARS TASARIM 2026 Copyright © bullarstasarim.com Tüm hakları saklıdır, Sitedeki görseller ve yazılar izinsiz kullanılamaz.
         </div>
         <div class="footer-credits">
-            <span itemprop="creator">Onur Erarslan</span> Tarafından E-Ticaret Sistemi İle Hazırlanmıştır Hakları Saklıdır.
+            Onur Erarslan Tarafından Hazırlanmıştır.
         </div>
     </footer>
 
@@ -393,112 +551,67 @@
 
         function setupSearch() {
             const input = document.getElementById('searchInput');
-            if (input) {
-                input.addEventListener('input', () => performSearch(input.value));
-            }
-        }
-
-        document.addEventListener('DOMContentLoaded', () => {
-            setupSearch();
-        });
-    </script>
-</body>
-</html>
-        <div class="product-card">
-            <div class="product-image">
-                <img src="kisiye-ozel-cift-fotografli-lazer-kazima-ahsap-cerceve.jpg" alt="Bambu Çerçeve">
-            </div>
-            <div class="product-info">
-                <h2 class="product-title">Kişiye Özel Çift Fotoğraflı Lazer İşleme Bambu Çerçeve – Ömürlük Anı Tasarımı</h2>
-                <div class="description-box">
-                    <p>Aynı çerçevede 2 farklı fotoğraf kullanabileceğin, doğallığın ve kalıcılığın en şık örneği. Bullars Tasarım atölyesinde, çevre dostu %100 doğal bambu üzerine en sevdiğiniz iki anıyı lazer teknolojisiyle işliyoruz. Minimal ve estetik yapısı, hafifliği ve çevre dostu malzemesiyle hem modern hem de doğal dekorasyonlara kusursuz uyum sağlar.
-                    Hem anlamı hem de şıklığı bir arada sunan bu ürün, duygusu yüksek ve kalıcı bir hediye arayanlar için mükemmel seçimdir.</p>
-                    <span class="read-more-btn" onclick="toggleReadMore(this)">devamını oku</span>
-                    <div class="hidden-content">
-                        <h3>100 Doğal Bambu – Şık ve Modern Görünüm</h3>
-                        <ul>
-                            <li>✔ Çevre dostu malzeme</li>
-                            <li>✔ Doğal ve sıcak görünüm</li>
-                            <li>✔ Hafif ve dayanıklı yapı</li>
-                        </ul>
-                        <h3>📸 Çift Fotoğraf Özelliği – Tek Üründe İki Anı</h3>
-                        <ul>
-                            <li>✔ Aynı çerçevede 2 farklı fotoğraf</li>
-                            <li>✔ Anlamlı kombinasyonlar (önce/sonra, çiftler, aile)</li>
-                            <li>✔ Hikaye anlatan tasarım</li>
-                        </ul>
-                        <h3>🔥 Lazer İşleme – Ömür Boyu Kalıcılık</h3>
-                        <ul>
-                            <li>✔ Solmaz</li>
-                            <li>✔ Silinmez</li>
-                            <li>✔ Yıllarca kalıcı</li>
-                        </ul>
-                        <h3>📦 Ürün Özellikleri</h3>
-                        <ul>
-                            <li>✔ Malzeme: %100 doğal bambu</li>
-                            <li>✔ Üretim: Lazer işleme</li>
-                            <li>✔ Çift fotoğraf alanı</li>
-                            <li>✔ Stand: Dahil</li>
-                        </ul>
-                    </div>
-                </div>
-                <a href="https://www.shopier.com/bullarstasarim" target="_blank" class="buy-button">FOTOĞRAFINI GÖNDER</a>
-            </div>
-        </div>
-
-    </div>
-
-    <a href="https://wa.me/905462171834" target="_blank" class="wa-fixed"><i class="fab fa-whatsapp"></i></a>
-
-    <footer class="footer-notice" itemscope itemtype="https://schema.org/WPFooter">
-        <div class="footer-top-text">
-            Güvenli Ödeme Ve Teslimat İçin <a href="https://www.shopier.com/bullarstasarim" target="_blank" itemprop="url">''Shopier''</a> Mağazamızdan Sipariş Oluşturabilirsiniz
-        </div>
-        <div class="footer-copyright">
-            <span itemprop="copyrightYear">2026</span> © <span itemprop="copyrightHolder">BULLARS TASARIM</span> - bullarstasarim.com | Tüm hakları saklıdır.
-        </div>
-        <div class="footer-credits">
-            <span itemprop="creator">Onur Erarslan</span> Tarafından Hazırlanmıştır.
-        </div>
-    </footer>
-
-    <script>
-        function toggleMenu() { event.stopPropagation(); document.getElementById('sideMenu').classList.toggle('active'); }
-        function toggleSearch() { event.stopPropagation(); document.getElementById('searchBar').classList.toggle('active'); }
-        function closeAll(event) { if (!document.getElementById('sideMenu').contains(event.target)) document.getElementById('sideMenu').classList.remove('active'); if (!document.getElementById('searchBar').contains(event.target)) document.getElementById('searchBar').classList.remove('active'); }
-        function toggleReadMore(btn) { const content = btn.nextElementSibling; if (content.style.display === "block") { content.style.display = "none"; btn.innerText = "devamını oku"; } else { content.style.display = "block"; btn.innerText = "küçült"; } }
-        function closeAll(event) {
-            const sideMenu = document.getElementById('sideMenu');
-            const searchBar = document.getElementById('searchBar');
-            if (!sideMenu.contains(event.target)) { sideMenu.classList.remove('active'); }
-            if (!searchBar.contains(event.target)) { searchBar.classList.remove('active'); }
-        }
-        function toggleReadMore(btn) {
-            const content = btn.nextElementSibling;
-            if (content.style.display === "block") { content.style.display = "none"; btn.innerText = "devamını oku"; }
-            else { content.style.display = "block"; btn.innerText = "küçült"; }
-        }
-
-        function performSearch(query) {
-            const term = query.trim().toLowerCase();
-            const products = document.querySelectorAll('.product-card');
-            products.forEach((card) => {
-                const title = card.querySelector('.product-title')?.innerText.toLowerCase() || '';
-                const desc = card.querySelector('.description-box')?.innerText.toLowerCase() || '';
-                const match = term === '' || title.includes(term) || desc.includes(term);
-                card.style.display = match ? 'flex' : 'none';
+            if (!input) return;
+            input.addEventListener('input', () => performSearch(input.value));
+            input.addEventListener('keydown', (e) => {
+                if (e.key === 'Enter') {
+                    e.preventDefault();
+                    performSearch(input.value);
+                }
             });
         }
 
-        function setupSearch() {
-            const input = document.getElementById('searchInput');
-            if (input) {
-                input.addEventListener('input', () => performSearch(input.value));
-            }
+        function setupCarouselControls() {
+            document.querySelectorAll('.product-image').forEach((container) => {
+                const carousel = container.querySelector('.image-carousel');
+                if (!carousel) return;
+                container.style.position = 'relative';
+                const controls = document.createElement('div');
+                controls.className = 'carousel-controls';
+                const leftBtn = document.createElement('button');
+                leftBtn.className = 'carousel-btn disabled';
+                leftBtn.innerHTML = '<span class="carousel-btn__inner">‹</span>';
+                const rightBtn = document.createElement('button');
+                rightBtn.className = 'carousel-btn';
+                rightBtn.innerHTML = '<span class="carousel-btn__inner">›</span>';
+                controls.appendChild(leftBtn);
+                controls.appendChild(rightBtn);
+                container.appendChild(controls);
+                function updateButtons() {
+                    if (carousel.scrollLeft <= 5) {
+                        leftBtn.classList.add('disabled');
+                    } else {
+                        leftBtn.classList.remove('disabled');
+                    }
+                    if (carousel.scrollLeft + carousel.clientWidth >= carousel.scrollWidth - 5) {
+                        rightBtn.classList.add('disabled');
+                    } else {
+                        rightBtn.classList.remove('disabled');
+                    }
+                }
+                leftBtn.addEventListener('click', () => {
+                    carousel.scrollBy({ left: -carousel.clientWidth, behavior: 'smooth' });
+                });
+                rightBtn.addEventListener('click', () => {
+                    carousel.scrollBy({ left: carousel.clientWidth, behavior: 'smooth' });
+                });
+                let scrollTimeout;
+                carousel.addEventListener('scroll', () => {
+                    window.requestAnimationFrame(updateButtons);
+                    window.clearTimeout(scrollTimeout);
+                    scrollTimeout = window.setTimeout(() => {
+                        const slideIndex = Math.round(carousel.scrollLeft / carousel.clientWidth);
+                        const targetLeft = slideIndex * carousel.clientWidth;
+                        carousel.scrollTo({ left: targetLeft, behavior: 'smooth' });
+                    }, 120);
+                });
+                updateButtons();
+            });
         }
 
         document.addEventListener('DOMContentLoaded', () => {
             setupSearch();
+            setupCarouselControls();
         });
     </script>
 </body>
