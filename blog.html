@@ -3,13 +3,13 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Blog | Ahşap Kütük Tablo, Lazer Kazıma & Hediye Rehberi - Bullars Tasarım</title>
-    <meta name="description" content="Bullars Tasarım 2026 Blog: Kişiye özel lazer kazıma ahşap kütük tablo modelleri, bambu çerçeve fikirleri ve rustik dekorasyon ipuçları. En güncel ahşap hediye trendleri.">
-    <meta name="keywords" content="blog, ahşap kütük tablo, lazer kazıma, kişiye özel ahşap hediye, 2026 dekorasyon trendleri, sevgiliye hediye, bambu çerçeve, rustik dekor, Bullars Tasarım">
+    <title>2026 Hediye Rehberi & Ahşap Tasarım Blogu | Bullars Tasarım</title>
+    <meta name="description" content="Kişiye özel lazer kazıma ahşap hediyeler, 2026 ev dekorasyon trendleri ve Harry Potter koleksiyonu hakkında profesyonel rehberler. Doğal ahşap sanatını keşfedin.">
+    <meta name="keywords" content="hediye rehberi 2026, kişiye özel ahşap hediye, lazer kazıma teknolojisi, ahşap kütük tablo, Harry Potter hediye fikirleri, rustik ev dekorasyonu, Bullars Tasarım blog">
     <meta name="robots" content="index,follow,max-image-preview:large,max-snippet:-1,max-video-preview:-1">
     <link rel="canonical" href="https://bullarstasarim.com/blog.html">
     <meta property="og:type" content="website">
-    <meta property="og:title" content="2026 Blog | Lazer Kazıma, Ahşap Kütük Tablo ve Dekorasyon Sanatı">
+    <meta property="og:title" content="Bullars Tasarım Blog | Ahşap Sanatı ve Kişiye Özel Hediye Rehberi">
     <meta property="og:description" content="Kişiye özel ahşap hediye, lazer kazıma teknolojisi ve dekorasyon fikirleri hakkında ipuçları ve bilgiler.">
     <meta property="og:url" content="https://bullarstasarim.com/blog.html">
     <meta property="og:image" content="https://bullarstasarim.com/atolye-calisma.jpg">
@@ -22,17 +22,46 @@
     <script type="application/ld+json">
     {
       "@context": "https://schema.org",
-      "@type": "Blog",
-      "name": "Bullars Tasarım Blog",
-      "description": "Lazer kazıma ve ahşap sanatı hakkında her şey.",
-      "publisher": {
-        "@type": "Organization",
-        "name": "Bullars Tasarım",
-        "logo": {
-          "@type": "ImageObject",
-          "url": "https://bullarstasarim.com/favicon.png"
+      "@graph": [
+        {
+          "@type": "Blog",
+          "@id": "https://bullarstasarim.com/blog.html#blog",
+          "name": "Bullars Tasarım Blog",
+          "description": "Lazer kazıma, ahşap kütük tablo ve kişiye özel hediye rehberi.",
+          "publisher": {
+            "@type": "Organization",
+            "name": "Bullars Tasarım",
+            "logo": {
+              "@type": "ImageObject",
+              "url": "https://bullarstasarim.com/favicon.png"
+            }
+          }
+        },
+        {
+          "@type": "BlogPosting",
+          "headline": "Harry Potter Hayranları İçin 2026’nın En Popüler Hediyesi",
+          "image": "https://bullarstasarim.com/harry-potter-temali-bardak-altligi-lazer-isleme.jpg",
+          "datePublished": "2026-05-20",
+          "author": {"@type": "Organization", "name": "Bullars Tasarım"},
+          "description": "Harry Potter Hogwarts lazer işleme ahşap bardak altlığı seti incelemesi."
+        },
+        {
+          "@type": "BlogPosting",
+          "headline": "Kişiye Özel İsimli Ahşap Kütük Dekor Trendleri",
+          "image": "https://bullarstasarim.com/kisiye-ozel-isimli-ahsap-kutuk-dekor.jpg",
+          "datePublished": "2026-03-10",
+          "author": {"@type": "Organization", "name": "Bullars Tasarım"},
+          "description": "2026 modern rustik aksesuar trendleri ve kütük dekor kullanımı."
+        },
+        {
+          "@type": "BlogPosting",
+          "headline": "Kişiye Özel Ahşap Tabela ve İşletme Çözümleri",
+          "image": "https://bullarstasarim.com/villa-giris-tabelasi-ahsap-ozel-tasarim.jpg",
+          "datePublished": "2026-02-15",
+          "author": {"@type": "Organization", "name": "Bullars Tasarım"},
+          "description": "Villa ve işletmeler için en etkili ahşap tabela seçimi."
         }
-      }
+      ]
     }
     </script>
 
@@ -96,24 +125,75 @@
         
         .nav-links-sub { display: none !important; }
         
-        /* BLOG KONTEYNER */
-        .blog-container { max-width: 900px; margin: 60px auto; padding: 0 20px; padding-bottom: 100px; }
-        .blog-post { background: #fff; padding: 60px; border-radius: 20px; box-shadow: 0 15px 40px rgba(0,0,0,0.06); }
-        .blog-main-title { font-family: 'Playfair Display', serif; font-size: 36px; color: #222; line-height: 1.3; margin-bottom: 30px; border-left: 10px solid #8B5E3C; padding-left: 25px; }
+        /* PREMIUM BLOG LAYOUT */
+        .blog-container { max-width: 1200px; margin: 40px auto; padding: 0 20px; padding-bottom: 100px; }
+        .blog-layout { display: flex; gap: 40px; align-items: flex-start; }
+        .blog-main { flex: 3; }
+        .blog-sidebar { 
+            flex: 1; position: sticky; top: 100px; background: #fff; 
+            padding: 30px; border-radius: 20px; 
+            box-shadow: 0 15px 40px rgba(0,0,0,0.04);
+            border: 1px solid rgba(139, 94, 60, 0.1);
+        }
+        .sidebar-title { 
+            font-family: 'Playfair Display', serif; font-size: 18px; 
+            margin-bottom: 20px; color: #3d2b1f; 
+            border-bottom: 2px solid #8B5E3C; padding-bottom: 10px;
+            letter-spacing: 1px;
+        }
+        .category-list { list-style: none; }
+        .category-list li { margin-bottom: 15px; }
+        .category-list a { 
+            text-decoration: none; color: #555; font-size: 13px; 
+            font-weight: 700; transition: 0.3s; display: block;
+            text-transform: uppercase;
+        }
+        .category-list a:hover { color: #8B5E3C; transform: translateX(8px); }
+
+        .blog-post { 
+            background: #fff; padding: 50px; border-radius: 25px; 
+            box-shadow: 0 15px 50px rgba(0,0,0,0.05); margin-bottom: 60px;
+            border: 1px solid rgba(0,0,0,0.02); transition: 0.4s ease;
+        }
+        .blog-post:hover { transform: translateY(-8px); box-shadow: 0 20px 60px rgba(0,0,0,0.08); }
+
+        .post-category-tag { 
+            background: #8B5E3C; color: #fff; padding: 6px 18px; 
+            border-radius: 50px; font-size: 10px; font-weight: 700; 
+            text-transform: uppercase; margin-bottom: 20px; 
+            display: inline-block; letter-spacing: 1.5px;
+        }
+
+        .blog-main-title { font-family: 'Playfair Display', serif; font-size: 32px; color: #222; line-height: 1.3; margin-bottom: 25px; border-left: none; padding-left: 0; position: relative; }
+        .blog-main-title::after { content: ''; position: absolute; left: 0; bottom: -10px; width: 60px; height: 3px; background: #efb97d; }
         
-        /* METİN ALANI - TÜM İÇERİK KORUNDU */
-        .blog-content p { font-size: 16px; color: #444; margin-bottom: 20px; text-align: justify; white-space: pre-line; }
-        .blog-content h2 { font-family: 'Playfair Display', serif; font-size: 24px; color: #3d2b1f; margin: 40px 0 20px 0; border-bottom: 2px solid #efb97d; padding-bottom: 10px; display: inline-block; }
-        .blog-content h3 { font-size: 19px; color: #3d2b1f; margin: 30px 0 15px 0; font-weight: 700; }
-        .blog-content ul { list-style: none; margin-bottom: 25px; padding-left: 20px; }
-        .blog-content ul li { font-size: 15px; color: #555; margin-bottom: 10px; position: relative; }
+        .blog-content p { font-size: 16px; color: #444; margin-bottom: 22px; text-align: justify; white-space: pre-line; }
+        .blog-content h2 { font-family: 'Playfair Display', serif; font-size: 24px; color: #3d2b1f; margin: 45px 0 20px 0; border-bottom: 2px solid #f3e5d8; padding-bottom: 10px; display: block; width: 100%; }
+        .blog-content h3 { font-size: 19px; color: #3d2b1f; margin: 35px 0 15px 0; font-weight: 700; position: relative; }
+        .blog-content ul { list-style: none; margin-bottom: 30px; padding-left: 25px; }
+        .blog-content ul li { font-size: 15px; color: #555; margin-bottom: 12px; position: relative; }
         .blog-content ul li::before { content: "✔"; color: #8B5E3C; position: absolute; left: -25px; font-weight: 700; }
-        .blog-image { width: 100%; max-width: 500px; display: block; margin: 30px auto; border-radius: 12px; box-shadow: 0 5px 15px rgba(0,0,0,0.1); }
+
+        /* GÖRSEL BOYUTLANDIRMA */
+        .blog-image { 
+            width: 100%; 
+            max-width: 600px; 
+            height: 280px; 
+            object-fit: contain; /* Görselin tamamını gösterir, zoom etkisini kaldırır */
+            display: block; margin: 25px auto; border-radius: 15px; 
+            background-color: #fdfaf7; /* Boşlukları dolduran hafif bir doku */
+            box-shadow: 0 8px 25px rgba(0,0,0,0.08); 
+            transition: 0.3s;
+        }
+        .blog-image:hover { transform: scale(1.01); }
 
         .wa-fixed { position: fixed; bottom: 85px; right: 30px; background-color: #25D366; color: white; width: 60px; height: 60px; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 30px; z-index: 2000; transition: 0.3s; }
         .footer-notice { width: 100%; background: #3d2b1f; color: #fff; text-align: center; padding: 15px 10px; margin-top: 50px; display: flex; flex-direction: column; gap: 3px; font-family: 'Playfair Display', serif; }
 
         @media (max-width: 768px) {
+            .blog-layout { flex-direction: column; }
+            .blog-sidebar { display: none; }
+            .blog-main { width: 100%; }
             .wood-header {
                 padding: 0 10px;
                 height: 50px;
@@ -138,9 +218,9 @@
             .nav-links-sub { display: none !important; }
             
             /* MOBİL BAŞLIK BOYUTLARI */
-            .blog-main-title { font-size: 24px !important; padding-left: 15px !important; margin-bottom: 20px !important; }
+            .blog-main-title { font-size: 24px !important; padding-left: 0 !important; margin-bottom: 20px !important; }
             .blog-content h2 { font-size: 20px !important; margin: 30px 0 15px 0 !important; }
-            .blog-image { margin: 20px auto !important; }
+            .blog-image { height: 180px !important; margin: 20px auto !important; }
         }
     </style>
 </head>
@@ -172,64 +252,205 @@
     </header>
 
     <div class="blog-container">
-        <article class="blog-post">
-            <h1 class="blog-main-title">Bullars Tasarım: Kişiye Özel Ahşap Ürünlerde Doğallık, Estetik ve Lazer İşleme Sanatı</h1>
-            
-            <img src="blog-ana-gorsel.jpg" alt="Bullars Tasarım Atölyesi ve Ahşap Ürünler" class="blog-image" loading="lazy" decoding="async">
+        <div class="blog-layout">
+            <div class="blog-main">
+                <!-- POST 1: Harry Potter (Kategori: Hediye Rehberi) -->
+                <article class="blog-post" id="hp-blog" itemscope itemtype="https://schema.org/BlogPosting">
+                    <span class="post-category-tag">Hediye Rehberi</span>
+                    <h1 class="blog-main-title" itemprop="headline">Harry Potter Hayranları İçin 2026’nın En Popüler Hediyesi: Lazer İşleme Ahşap Bardak Altlığı Seti</h1>
+                    <meta itemprop="datePublished" content="2026-05-20">
+                    
+                    <img src="harry-potter-temali-bardak-altligi-lazer-isleme.jpg" alt="Harry Potter Hogwarts Lazer İşleme Ahşap Bardak Altlığı Seti - Bullars Tasarım" class="blog-image" loading="lazy" decoding="async">
 
-            <div class="blog-content">
-                <p>Günümüzde insanlar artık sıradan ürünler değil, anlam taşıyan, kişiye özel ve doğal ürünler arıyor.
-                İşte tam bu noktada Bullars Tasarım, doğal ahşabı modern lazer teknolojisiyle buluşturarak eşsiz ve tamamen kişiye özel tasarımlar ortaya çıkarıyor.
-                İstanbul’da bulunan atölyemizde; bambu fotoğraflıklar, doğal ahşap kütük dekorlar, iroko sunum tahtaları, ceviz ağacından kesme tahtaları ve ahşap bardak altlıkları başta olmak üzere geniş bir ürün yelpazesi sunuyoruz.
-                Her ürün sadece bir obje değil; 👉 bir anı, bir hikaye ve bir duygunun yansımasıdır.</p>
+                    <div class="blog-content" itemprop="articleBody">
+                        <p>Büyücülük dünyasının kapıları 2026’da Bullars Tasarım ile ahşabın doğal dokusunda aralanıyor. Harry Potter evrenine olan tutku hiç eskimediği gibi, dekorasyonda "tematik ve kaliteli" ürünlere olan arayış her geçen gün artıyor. İşte bu noktada, hem bir koleksiyon objesi hem de fonksiyonel bir kullanım sunan <strong>Harry Potter Hogwarts lazer işleme ahşap bardak altlığı seti</strong>, Potterhead’ler için yılın en dikkat çeken ürünü olmayı başardı.</p>
 
-                <h2>🌳 Doğal Ahşap Kütük Ürünler – Benzersiz ve Rustik Dekorasyon</h2>
-                <p>Doğal ağaç kütüğünden üretilen ürünler, her biri farklı damar yapısına sahip olduğu için tamamen benzersizdir.
-                Bullars Tasarım’da üretilen:</p>
-                <ul>
-                    <li>Ahşap kütük tablolar</li>
-                    <li>İsimli ve tarihli dekor ürünleri</li>
-                    <li>Fotoğraflı ahşap tasarımlar</li>
-                </ul>
-                <p>özellikle düğün, nişan, söz ve özel gün dekorasyonu için yoğun talep görmektedir.
-                👉 “Ahşap kütük tablo”, “rustik ahşap dekor”, “isimli ahşap hediye” arayanlar için en özel çözümler burada.</p>
+                        <p>Bullars Tasarım atölyesinde büyük bir titizlikle hazırlanan bu set, sıradan baskı ürünlerin aksine tamamen doğal ahşap üzerine profesyonel lazer kazıma tekniğiyle işleniyor. Peki, bu seti Google aramalarında ve hayranların listelerinde ilk sıraya taşıyan detaylar neler?</p>
 
-                <img src="blog-kutuk-urunler.jpg" alt="Kişiye Özel Ahşap Kütük Tablo ve Dekorlar" class="blog-image" loading="lazy" decoding="async">
+                        <h2>⚡ Hogwarts ve Platform 9 3/4: İkonik Tasarımlar Masanızda</h2>
+                        <p>Bir bardak altlığından çok daha fazlası... Setimiz, büyücülük dünyasının en güçlü iki sembolünü barındırıyor: Görkemli <strong>Hogwarts Kalesi silüeti</strong> ve sihirli yolculuğun başlangıcı olan <strong>Platform 9 3/4</strong> amblemi. 2026 dekorasyon trendlerinde "karakterli detaylar" ön planda olduğu için, bu ürün çalışma masanızda veya kahve sunumlarınızda anında bir odak noktası yaratıyor.</p>
+                        <ul>
+                            <li>✔ <strong>Hogwarts Silüeti:</strong> Detaylı lazer işçiliği ile kalenin tüm kuleleri ahşaba derinlemesine mühürlendi.</li>
+                            <li>✔ <strong>Platform 9 3/4:</strong> Klasikleşmiş amblem, retro bir hava ile modern sunumlara eşlik ediyor.</li>
+                        </ul>
 
-                <h2>📸 Bambu Fotoğraf Çerçeveleri – Anılarınızı Doğal Şekilde Ölümsüzleştirin</h2>
-                <p>Bambu, hem çevre dostu hem de estetik bir malzemedir.
-                Bullars Tasarım bambu fotoğraf ürünlerinde:</p>
-                <ul>
-                    <li>Tekli ve çift fotoğraflı çerçeveler</li>
-                    <li>Lazer işleme fotoğraf baskı</li>
-                    <li>İsim ve tarih ekleme</li>
-                </ul>
-                <p>sunarak anılarınızı ömürlük bir tasarıma dönüştürür.
-                👉 “Bambu fotoğraf çerçevesi”, “kişiye özel ahşap fotoğraf baskı” gibi aramalarda öne çıkan ürünlerdir.</p>
+                        <h2>🏆 Lazer Kazıma Teknolojisi Neden Önemli?</h2>
+                        <img src="harry-potter-bardak-altligi-ahsap-hogwarts.jpg" alt="Hogwarts Kalesi Lazer Kazıma Detayı - Bullars Tasarım Kalitesi" class="blog-image" loading="lazy" decoding="async">
+                        <p>Piyasada bulunan pek çok Harry Potter ürününde görseller ahşabın üzerine basit bir baskı yöntemiyle uygulanır. Bu durum, zamanla sıcak bardakların etkisiyle görselin soyulmasına veya solmasına neden olur. Bullars Tasarım olarak biz <strong>lazer kazıma (yakma)</strong> teknolojisini kullanıyoruz:</p>
+                        <ul>
+                            <li><strong>Silinmezlik:</strong> Tasarım ahşabın liflerine işlendiği için ömür boyu kalıcıdır.</li>
+                            <li><strong>Isı Dayanıklılığı:</strong> Sıcak çay ve kahve fincanları işlemeye asla zarar vermez.</li>
+                            <li><strong>Dokunsal Hissiyat:</strong> Kazınan alanlara dokunduğunuzda ahşabın içindeki derinliği hissedebilirsiniz.</li>
+                        </ul>
 
-                <h2>☕ İroko Ahşap Sunum Tahtaları – Kafeler ve Evler İçin Premium Seçim</h2>
-                <p>İroko ağacı, dayanıklılığı ve suya karşı direnci ile bilinir.
-                Bu nedenle özellikle kahve sunum tahtası, Türk kahvesi sunumu ve kafe & restoran servis ürünleri için en ideal malzemelerden biridir.
-                Bullars Tasarım’da üretilen iroko sunum tahtaları logo baskılı (işletmelere özel), kişiye özel isimli ve yoğun kullanıma uygundur.</p>
+                        <h2>🎁 Potterhead’ler İçin "Düşünülmüş" En Güzel Hediye</h2>
+                        <p>Doğum günü, yeni iş tebriği veya özel bir kutlama fark etmeksizin; bir Harry Potter hayranına alabileceğiniz en anlamlı hediye, onun tutkusunu doğallıkla birleştiren bu settir. Ahşabın sıcaklığı ve Harry Potter evreninin büyüsü, bu ürünü "herkesin evinde olan" fabrikasyon ürünlerden ayırıyor. Üstelik 2026'da popülerleşen <em>tematik ev ofisleri</em> için de vazgeçilmez bir dekorasyon tamamlayıcısı.</p>
 
-                <img src="blog-iroko-sunum.jpg" alt="Kafe ve Restoranlar İçin Logo Baskılı İroko Kahve Sunum Tahtası" class="blog-image">
+                        <div style="background: #fdf5e6; padding: 30px; border-radius: 15px; border-left: 5px solid #8B5E3C; margin-top: 40px;">
+                            <h3 style="margin-top: 0;">🎯 Ürün Özellikleri Özeti:</h3>
+                            <p>• <strong>Malzeme:</strong> %100 Doğal Ahşap<br>
+                            • <strong>Teknik:</strong> Yüksek Çözünürlüklü Lazer Kazıma<br>
+                            • <strong>Dayanıklılık:</strong> Suya, neme ve yüksek ısıya dayanıklı koruyucu yapı<br>
+                            • <strong>Set İçeriği:</strong> Hogwarts ve Platform 9 3/4 Temalı Altlıklar<br>
+                            • <strong>Kullanım:</strong> Kahve sunumları, oyuncu masası dekoru, koleksiyon objesi</p>
+                        </div>
 
-                <h2>🔥 Lazer İşleme Teknolojisi – Silinmez, Kalıcı ve Premium</h2>
-                <p>Bullars Tasarım’ın tüm ürünlerinde kullanılan teknik: 👉 Lazer İşleme
-                Bu teknik sayesinde baskı değil, kazıma yapılır; ürünler silinmez, solma yapmaz ve yıllarca kalıcılığını korur.
-                👉 Ahşap ile bütünleşen tasarım, ürünü premium seviyeye taşır.</p>
+                        <p style="text-align: center; margin-top: 40px; font-weight: 700; font-size: 18px; color: #3d2b1f;">
+                            Siz de bu sihirli dünyayı masanıza taşımak veya bir sevdiğinizi büyülemek istiyorsanız, Bullars Tasarım kalitesiyle üretilen bu seti kaçırmayın.
+                        </p>
 
-                <h2>🚀 Neden Bullars Tasarım?</h2>
-                <ul>
-                    <li>✔ %100 doğal ahşap</li>
-                    <li>✔ El emeği üretim</li>
-                    <li>✔ Kişiye özel tasarım</li>
-                    <li>✔ Profesyonel lazer işleme</li>
-                    <li>✔ İstanbul merkezli atölye</li>
-                    <li>✔ Türkiye geneli gönderim</li>
-                </ul>
+                        <div style="text-align: center; margin-top: 30px;">
+                            <a href="tum-urunler.html#urun14" title="Harry Potter Ahşap Bardak Altlığı Satın Al" style="display:inline-block; padding:18px 40px; background:#8B5E3C; color:#fff; text-decoration:none; border-radius:50px; font-weight:700; box-shadow: 0 5px 15px rgba(139, 94, 60, 0.4); transition: 0.3s;">HARRY POTTER SETİNİ ŞİMDİ İNCELE</a>
+                        </div>
+                    </div>
+                </article>
+
+                <!-- POST 2: Bullars Tasarım (Kategori: Teknik & Bilgi) -->
+                <article class="blog-post" id="hakkimizda-blog" itemscope itemtype="https://schema.org/BlogPosting">
+                    <span class="post-category-tag">Teknik & Bilgi</span>
+                    <h1 class="blog-main-title" itemprop="headline">Bullars Tasarım: Kişiye Özel Ahşap Ürünlerde Doğallık, Estetik ve Lazer İşleme Sanatı</h1>
+                    
+                    <img src="blog-ana-gorsel.jpg" alt="Bullars Tasarım Atölyesi ve Ahşap Ürünler" class="blog-image" loading="lazy" decoding="async">
+
+                    <div class="blog-content" itemprop="articleBody">
+                        <p>Günümüzde insanlar artık sıradan ürünler değil, anlam taşıyan, kişiye özel ve doğal ürünler arıyor.
+                        İşte tam bu noktada Bullars Tasarım, doğal ahşabı modern lazer teknolojisiyle buluşturarak eşsiz ve tamamen kişiye özel tasarımlar ortaya çıkarıyor.
+                        İstanbul’da bulunan atölyemizde; bambu fotoğraflıklar, doğal ahşap kütük dekorlar, iroko sunum tahtaları, ceviz ağacından kesme tahtaları ve ahşap bardak altlıkları başta olmak üzere geniş bir ürün yelpazesi sunuyoruz.
+                        Her ürün sadece bir obje değil; 👉 bir anı, bir hikaye ve bir duygunun yansımasıdır.</p>
+
+                        <h2>🌳 Doğal Ahşap Kütük Ürünler – Benzersiz ve Rustik Dekorasyon</h2>
+                        <p>Doğal ağaç kütüğünden üretilen ürünler, her biri farklı damar yapısına sahip olduğu için tamamen benzersizdir.
+                        Bullars Tasarım’da üretilen:</p>
+                        <ul>
+                            <li>Ahşap kütük tablolar</li>
+                            <li>İsimli ve tarihli dekor ürünleri</li>
+                            <li>Fotoğraflı ahşap tasarımlar</li>
+                        </ul>
+                        <p>özellikle düğün, nişan, söz ve özel gün dekorasyonu için yoğun talep görmektedir.
+                        👉 “Ahşap kütük tablo”, “rustik ahşap dekor”, “isimli ahşap hediye” arayanlar için en özel çözümler burada.</p>
+
+                        <img src="blog-kutuk-urunler.jpg" alt="Kişiye Özel Ahşap Kütük Tablo ve Dekorlar" class="blog-image" loading="lazy" decoding="async">
+
+                        <h2>📸 Bambu Fotoğraf Çerçeveleri – Anılarınızı Doğal Şekilde Ölümsüzleştirin</h2>
+                        <p>Bambu, hem çevre dostu hem de estetik bir malzemedir.
+                        Bullars Tasarım bambu fotoğraf ürünlerinde:</p>
+                        <ul>
+                            <li>Tekli ve çift fotoğraflı çerçeveler</li>
+                            <li>Lazer işleme fotoğraf baskı</li>
+                            <li>İsim ve tarih ekleme</li>
+                        </ul>
+                        <p>sunarak anılarınızı ömürlük bir tasarıma dönüştürür.
+                        👉 “Bambu fotoğraf çerçevesi”, “kişiye özel ahşap fotoğraf baskı” gibi aramalarda öne çıkan ürünlerdir.</p>
+
+                        <h2>☕ İroko Ahşap Sunum Tahtaları – Kafeler ve Evler İçin Premium Seçim</h2>
+                        <p>İroko ağacı, dayanıklılığı ve suya karşı direnci ile bilinir.
+                        Bu nedenle özellikle kahve sunum tahtası, Türk kahvesi sunumu ve kafe & restoran servis ürünleri için en ideal malzemelerden biridir.
+                        Bullars Tasarım’da üretilen iroko sunum tahtaları logo baskılı (işletmelere özel), kişiye özel isimli ve yoğun kullanıma uygundur.</p>
+
+                        <img src="blog-iroko-sunum.jpg" alt="Kafe ve Restoranlar İçin Logo Baskılı İroko Kahve Sunum Tahtası" class="blog-image">
+
+                        <h2>🔥 Lazer İşleme Teknolojisi – Silinmez, Kalıcı ve Premium</h2>
+                        <p>Bullars Tasarım’ın tüm ürünlerinde kullanılan teknik: 👉 Lazer İşleme
+                        Bu teknik sayesinde baskı değil, kazıma yapılır; ürünler silinmez, solma yapmaz ve yıllarca kalıcılığını korur.
+                        👉 Ahşap ile bütünleşen tasarım, ürünü premium seviyeye taşır.</p>
+
+                        <h2>🚀 Neden Bullars Tasarım?</h2>
+                        <ul>
+                            <li>✔ %100 doğal ahşap</li>
+                            <li>✔ El emeği üretim</li>
+                            <li>✔ Kişiye özel tasarım</li>
+                            <li>✔ Profesyonel lazer işleme</li>
+                            <li>✔ İstanbul merkezli atölye</li>
+                            <li>✔ Türkiye geneli gönderim</li>
+                        </ul>
+                    </div>
+                </article>
+
+                <!-- POST 3: İsimli Kütük Dekor (Kategori: Dekorasyon & Stil) -->
+                <article class="blog-post" id="kutuk-dekor-blog" itemscope itemtype="https://schema.org/BlogPosting">
+                    <span class="post-category-tag">Dekorasyon & Stil</span>
+                    <h1 class="blog-main-title" itemprop="headline">Kişiye Özel İsimli Ahşap Kütük Dekor: 2026’nın En Çok Tercih Edilen Modern Rustik Aksesuarı</h1>
+                    <meta itemprop="datePublished" content="2026-03-10">
+                    
+                    <img src="kisiye-ozel-isimli-ahsap-kutuk-dekor.jpg" alt="Kişiye Özel İsimli Ahşap Kütük Dekor - Modern ve Rustik Tasarım" class="blog-image" loading="lazy" decoding="async">
+
+                    <div class="blog-content" itemprop="articleBody">
+                        <p>Mekanların ruhu, içinde barındırdığı detaylarda gizlidir. 2026 iç mekan tasarım trendleri incelendiğinde, "soğuk ve fabrikasyon" ürünlerin yerini tamamen "kişiselleştirilmiş ve organik" parçalara bıraktığı görülüyor. Bu akımın öncüsü olan <strong>kişiye özel isimli ahşap kütük dekor</strong>, sadece bir aksesuar değil, bulunduğu ortama karakter katan sanatsal bir imzadır.</p>
+
+                        <p>Bullars Tasarım atölyesinde, %100 doğal Türkiye ağaç kütüklerinden el işçiliği ile hazırlanan bu ürünler, yüksek çözünürlüklü lazer kazıma teknolojisiyle buluşarak ömürlük birer hatıraya dönüşüyor. Peki, bir isim yazılı ahşap dekoru bu kadar vazgeçilmez kılan nedir? İşte kullanım alanlarından kurumsal avantajlarına kadar tüm detaylar...</p>
+
+                        <h2>🏠 Ev Dekorasyonunda Doğal Sıcaklık: Yaşayan Detaylar</h2>
+                        <p>Evinizdeki atmosferi bir anda değiştirmek için büyük mobilyalara ihtiyacınız yok. Kitaplıklarınızın arasında, TV ünitenizin üzerinde veya antre girişinde konumlandıracağınız bir <strong>kütük dekor</strong>, mekana anında "yaşanmışlık" ve "sıcaklık" katar. 2026'da popüler olan <em>Japandi</em> ve <em>Wabi-Sabi</em> dekorasyon stillerinin temel taşı olan doğal kusurluluk, bu ürünlerin her birinin damar yapısında hayat bulur.</p>
+                        <ul>
+                            <li>✔ <strong>Bebek ve Çocuk Odaları:</strong> Bebeğinizin ismini doğal bir kütüğe işleyerek masalsı bir köşe yaratın.</li>
+                            <li>✔ <strong>Anı Köşeleri:</strong> Aile fotoğraflarınızın yanına soyisminizin yazılı olduğu bir kütük ekleyerek aidiyet hissini güçlendirin.</li>
+                        </ul>
+
+                        <h2>💼 Profesyonel Ofis ve İşletmeler İçin Kurumsal Branding</h2>
+                        <img src="ahsap-kutuk-uzerine-lazer-isim-yazma.jpg" alt="Ofis Masası İçin Lazer Yazılı Ahşap Kütük İsimlik" class="blog-image" loading="lazy" decoding="async">
+                        <p>Ofis dekorasyonunda standart plastik masa isimlikleri artık profesyonel bir duruş sergilemek için yeterli değil. <strong>Lazer yazılı ahşap masa isimlikleri</strong>, yönetici masalarında ve resepsiyon bankolarında güven veren, prestijli bir imaj oluşturur. İşletmeler için logo baskılı kütük dekorlar, markanızın "doğa dostu" ve "kalite odaklı" vizyonunu müşterilerinize sessizce fısıldar.</p>
+                        <p>Restoran ve kafelerde ise masalarda yer alan "Rezervasyon" veya "Masa Numarası" kütükleri, butik hizmet anlayışınızı zirveye taşır. Unutmayın, lazer kazıma ahşabın liflerine işlendiği için yoğun kullanımda bile silinmez ve profesyonelliğinizi yıllarca korur.</p>
+
+                        <h2>💍 Organizasyonlar ve Özel Günler: Unutulmaz Bir Hatıra</h2>
+                        <p>Düğün, nişan, söz veya kurumsal lansmanlarda detaylar her şeydir. <strong>İsimli ahşap kütük dekorlar</strong>, organizasyonlarda şu amaçlarla fark yaratır:</p>
+                        <ul>
+                            <li><strong>Düğün Masası İsimlikleri:</strong> Nikah masasında çiftlerin isminin yer aldığı dev kütükler.</li>
+                            <li><strong>Hoşgeldiniz Panoları:</strong> Misafirleri karşılayan estetik ve organik isim levhaları.</li>
+                            <li><strong>Lansman Hediyelikleri:</strong> Marka etkinliğine katılan VİP konuklara isme özel hazırlanan kalıcı bir teşekkür hediyesi.</li>
+                        </ul>
+
+                        <h2>🎁 Hediye Türlerinde Bir Devrim: "Sadece Sana Özel"</h2>
+                        <img src="isim-yazili-ahsap-kutuk-hediyelik.jpg" alt="Sevdiklerinize Özel Lazer Kazıma Ahşap Hediye" class="blog-image" loading="lazy" decoding="async">
+                        <p>Hediye alırken en büyük zorluk "sıradan olmamaktır". Birine isminin yazılı olduğu bir kütük dekor verdiğinizde, ona aslında şu mesajı verirsiniz: <em>"Senin için özel olarak üretildi, dünyada bir eşi daha yok."</em></p>
+                        <p><strong>Yıldönümü hediyesi</strong>, yeni iş tebriği, öğretmenler günü veya yeni ev hediyesi... Hangi kategori olursa olsun, lazer kazıma ile mühürlenen isimler, hediyenizi bir objeden öte, ömür boyu saklanacak duygusal bir hazineye dönüştürür.</p>
+
+                        <h2>🛡️ Neden Lazer Kazıma Kütük Dekor Seçmelisiniz?</h2>
+                        <p>Piyasada bulunan baskı yöntemlerinin aksine, Bullars Tasarım'ın kullandığı lazer teknolojisi ahşabı yakarak derinlik oluşturur. Bu da şu avantajları sağlar:</p>
+                        <ul>
+                            <li><strong>Silinmezlik:</strong> Zamanla aşınan mürekkep veya yapıştırma değil; kalıcı bir işleme.</li>
+                            <li><strong>Netlik:</strong> En ince font detaylarını bile ahşabın dokusunu bozmadan yansıtır.</li>
+                            <li><strong>Doğallık:</strong> %100 doğal ağaç kütüğü, koruyucu yağlarla desteklenerek nefes almaya devam eder.</li>
+                        </ul>
+
+                        <div style="background: #fdf5e6; padding: 30px; border-radius: 15px; border-left: 5px solid #8B5E3C; margin-top: 40px;">
+                            <h3 style="margin-top: 0;">🎯 Özetle Kullanım Alanları:</h3>
+                            <p>• <strong>Evlerde:</strong> Kitaplık, raf, çocuk odası ve tv ünitesi dekoru.<br>
+                            • <strong>Ofislerde:</strong> Modern masa isimliği ve kurumsal branding.<br>
+                            • <strong>İşletmelerde:</strong> Resepsiyon dekoru, restoran masa kartları.<br>
+                            • <strong>Organizasyonlarda:</strong> Düğün, nişan ve söz dekoratif objeleri.<br>
+                            • <strong>Hediyelik:</strong> Doğum günü, yeni iş ve evlilik hatırası.</p>
+                        </div>
+
+                        <p style="text-align: center; margin-top: 40px; font-weight: 700; font-size: 18px; color: #3d2b1f;">
+                            Siz de mekanınıza doğanın imzasını atmak veya sevdiklerinize ömürlük bir hatıra bırakmak istiyorsanız, Bullars Tasarım koleksiyonuna göz atın.
+                        </p>
+
+                        <div style="text-align: center; margin-top: 30px;">
+                            <a href="tum-urunler.html#urun13" style="display:inline-block; padding:18px 40px; background:#8B5E3C; color:#fff; text-decoration:none; border-radius:50px; font-weight:700; box-shadow: 0 5px 15px rgba(139, 94, 60, 0.4); transition: 0.3s;">KÜTÜK DEKOR MODELLERİNİ İNCELE</a>
+                        </div>
+                    </div>
+                </article>
+
+                <!-- ... Diğer yazılar aynı şekilde flex yapısı içinde devam eder ... -->
             </div>
-        </article>
+
+            <!-- SAĞ TARAF: KATEGORİ SİDEBAR -->
+            <aside class="blog-sidebar">
+                <h3 class="sidebar-title">KATEGORİLER</h3>
+                <ul class="category-list">
+                    <li><a href="#hp-blog">🎁 Hediye Rehberi</a></li>
+                    <li><a href="#kutuk-dekor-blog">🏠 Dekorasyon & Stil</a></li>
+                    <li><a href="#lazer-teknoloji-blog">⚙️ Teknik & Bilgi</a></li>
+                    <li><a href="#tabela-blog">💼 Kurumsal Çözümler</a></li>
+                </ul>
+                
+                <div style="margin-top: 40px; padding: 25px; background: #fdf5e6; border-radius: 15px; text-align: center; border: 1px solid #efb97d;">
+                    <p style="font-size: 13px; font-weight: 700; color: #3d2b1f; margin-bottom: 15px;">Size Özel Tasarım İçin</p>
+                    <a href="https://wa.me/905462171834" style="color: #25D366; font-size: 28px; transition: 0.3s;"><i class="fab fa-whatsapp"></i></a>
+                </div>
+            </aside>
+        </div>
+    </div>
 
         <!-- YENİ BLOG POST 1 -->
         <article class="blog-post" style="margin-top: 60px;">
